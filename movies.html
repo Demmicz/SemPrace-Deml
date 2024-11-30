@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <nav class="nav-primary">
+        <ul class="nav-primary__links">
+            <li><a href="index.html">FreeTimeZone.cz</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
+            <li><a href="videogames.html">Videogames</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+        <form id="nav-primary__search">
+            <input type="text">
+            <input type="button" value="search">
+        </form>
+        <a href="login.html">Login</a>
+    </nav>
+    <div id = "btn--filter" onclick="openfilters()"><img src="icons/filter.png" ></div>   
+    <aside class="filters">
+        Filters<br><br>
+        <form>
+            Rating<br><br>
+            Min rating <input type="number" min="0" max="100" name="min-rating" id="min"><br><br>
+            Max rating <input type="number" min="0" max="100" name="max-rating" id="max"><br><br>
+            Release date<br><br>
+            <input type="range" min="1980" max="2024" value="2000" id="year"
+                oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output><br><br>
+            Platforms<br><br>
+            <input type="checkbox" name="Netflix"> Netflix<br><br>
+            <input type="checkbox" name="MAX"> MAX<br><br>
+            <input type="checkbox" name="Prime video"> Prime video <br><br>
+            <input type="checkbox" name="Disney+"> Disney+ <br><br>
+        </form>
+    </aside>
+    <script>
+        let open = false;
+
+        function openfilters(){
+            if (!open){
+                document.querySelector(".filters").style.display = "block";
+                open = true;
+            } else {
+                document.querySelector(".filters").style.display = "none";
+                open = false;
+            }
+            
+        }
+
+
+    </script>
+    <div class="list">
+        <div class = "list__title"><img src="images/movies/django_unchained.jpg" alt="Django Unchained"><div class = "list__title__description"><div class = "list__title__description__name">Django Unchained</div><div class="list__title__description__rating">76%</div>Year: 2012</div></div>
+        <div class = "list__title"><img src="images/movies/interstellar.webp" alt="Interstellar"></div>
+        <div class = "list__title"><img src="images/movies/john_wick.jpg" alt="John Wick"></div>
+        <div class = "list__title"><img src="images/movies/oppenheimer.jpg" alt="Oppenheimer"></div>
+        <div class = "list__title"><img src="images/movies/django_unchained.jpg" alt="Django Unchained"></div>
+        <div class = "list__title"><img src="images/movies/interstellar.webp" alt="Interstellar"></div>
+        <div class = "list__title"><img src="images/movies/john_wick.jpg" alt="John Wick"></div>
+        <div class = "list__title"><img src="images/movies/oppenheimer.jpg" alt="Oppenheimer"></div>
+        <div class = "list__title"><img src="images/movies/django_unchained.jpg" alt="Django Unchained"></div>
+        <div class = "list__title"><img src="images/movies/interstellar.webp" alt="Interstellar"></div>
+        <div class = "list__title"><img src="images/movies/john_wick.jpg" alt="John Wick"></div>
+        <div class = "list__title"><img src="images/movies/oppenheimer.jpg" alt="Oppenheimer"></div>
+        <div class = "list__title"><img src="images/movies/django_unchained.jpg" alt="Django Unchained"></div>
+        <div class = "list__title"><img src="images/movies/interstellar.webp" alt="Interstellar"></div>
+        <div class = "list__title"><img src="images/movies/john_wick.jpg" alt="John Wick"></div>
+        <div class = "list__title"><img src="images/movies/oppenheimer.jpg" alt="Oppenheimer"></div>
+    </div>
+
+
+</body>
+
+</html>

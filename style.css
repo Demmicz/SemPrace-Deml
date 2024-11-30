@@ -1,0 +1,248 @@
+@font-face {
+    font-family: Roboto;
+    src: url("fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+    font-family: Roboto-medium;
+    src: url("fonts/Roboto-Medium.ttf");
+}
+@font-face {
+    font-family: Roboto-black;
+    src: url("fonts/Roboto-Black.ttf");
+}
+:ROOT {
+    --color-background-A: #19305C;
+    --color-element-A: #03122F;
+    --font: "Roboto";
+    --font-M: "Roboto-medium";
+    --font-B: "Roboto-black";
+    --font-background-articles: #03122F;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font);
+    background-color: var(--color-background-A);
+}
+.nav-primary {
+    background-color: var(--color-element-A);
+    border: black 1px solid;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    overflow: hidden;
+}
+
+.nav-primary__links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border-bottom: white solid 1px;
+}
+
+.nav-primary a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    font-size: 1rem;
+}
+
+.nav-primary a:hover {
+    color: black;
+    background-color: white;
+    transition: color 0.1s ease-in;
+    transition: background 0.1s ease;
+    border-radius: 5px;
+}
+
+.nav-primary a[href="login.html"] {
+    display: block;
+    float: right;
+    margin: 8px;
+}
+
+#nav-primary__search {
+    margin: 1rem;
+    display: inline-block;
+}
+
+#nav-primary__search input {
+    border-radius: 7px;
+}
+
+#nav-primary__search input[type="button"] {
+    background-color: black;
+    color: whitesmoke;
+    padding: 0.5rem 0.5rem;
+    font-family: var(--font-A);
+}
+
+#nav-primary__search input[type="button"]:hover {
+    background-color: orange;
+    color: black;
+    transition: background 0.1s ease;
+    transition: color 0.1s ease;
+    cursor: pointer;
+}
+
+#nav_primary__search input[type="text"] {
+    padding: 0.5rem 0.625rem;
+}
+
+footer {
+    background-color: var(--color-element-A);
+    height: 5vh;
+    color: white;
+}
+
+/*login.html and registration.html*/
+
+.login {
+    color: white;
+    background-color: var(--color-element-A);
+    padding: 50px;
+    border-radius: 15px;
+    width: fit-content;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.login form {
+    color: white;
+}
+.login form input {
+    background-color: white;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+    float: right;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+.login form input[type="button"] {
+    padding: 10px;
+    font-size: 15px;
+    background-color: white;
+    cursor: pointer;
+    float: none;
+}
+
+#btn--filter{
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    border: white 1px solid;
+
+}
+#btn--filter img {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#btn--filter:hover {
+    background-color: var(--color-element-A);
+}
+#btn--filter:hover img {
+    filter: invert(1);
+
+}
+.filters {
+    display: none;
+    color: white;
+    background-color: var(--color-element-A);
+
+}
+/* movies.html, tvshows.html and videogames.html */
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: white;
+
+}
+
+.list__title img {
+    height: 300px;
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.list__title {
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid white;
+    
+}
+.list__title__description{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.list__title__description__name {
+    color: black;
+    font: var(--font-B);
+    font-size: 24px;
+    margin: 0;
+    text-justify: center;
+}
+
+.list__title__description__rating{
+    float: right;
+    font-size: 32px;
+    
+}
+
+/* Movies */
+.main__movies {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: ;
+}
+@media screen and (min-width: 624px) {
+    .nav-primary__links {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+
+    }
+
+    .nav-primary__links li {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+/* LAPTOP */
+
+@media screen and (min-width: 750px) {
+    .nav-primary__links {
+        justify-content: flex-start;
+    }
+    #btn--filter {
+        display: none;
+    }
+    .filters {
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        display: block;
+        float: left;
+        width: 20%;
+        height: 100vh;
+    }
+    .list {
+        margin-left: 20%;
+    }
+}

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="style.css">-->
+    <style>
+        @font-face {
+            font-family: Roboto;
+            src: url("fonts/Roboto-Regular.ttf");
+        }
+
+        @font-face {
+            font-family: Roboto-medium;
+            src: url("fonts/Roboto-Medium.ttf");
+        }
+        :ROOT {
+            --color-background-A: #19305C;
+            --color-element-A: #03122F;
+            --font-A: "Roboto";
+            --font-B: "Roboto-medium";
+            --font-background-articles: #03122F;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: var(--font-A);
+            background-color: var(--color-background-A);
+        }
+
+        .nav-primary {
+            background-color: var(--color-element-A);
+            border: black 1px solid;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+            overflow: hidden;
+        }
+
+        .nav-primary__links {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            border-bottom: white solid 1px;
+        }
+
+        .nav-primary a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            padding-top: auto;
+            padding-bottom: auto;
+            font-size: 2.5vh;
+        }
+
+        .nav-primary a:hover {
+            color: black;
+            background-color: white;
+            transition: color 0.1s ease-in;
+            transition: background 0.1s ease;
+            border-radius: 5px;
+        }
+
+        .nav-primary a[href="login.html"] {
+            display: block;
+            float: right;
+            margin: 8px;
+        }
+
+        #nav-primary__search {
+            margin: 1rem;
+            display: inline-block;
+        }
+
+        #nav-primary__search input {
+            border-radius: 7px;
+        }
+
+        #nav-primary__search input[type="button"] {
+            background-color: black;
+            color: whitesmoke;
+            padding: 0.5rem 0.5rem;
+            font-family: var(--font-A);
+        }
+
+        #nav-primary__search input[type="button"]:hover {
+            background-color: orange;
+            color: black;
+            transition: background 0.1s ease;
+            transition: color 0.1s ease;
+            cursor: pointer;
+        }
+
+        #nav_primary__search input[type="text"] {
+            padding: 0.5rem 0.625rem;
+        }
+
+        .top-picks > div {
+            display: flex;
+            align-items: center;
+            background-color: var(--color-element-A);
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+        }
+        .top-picks header{
+            color: white;
+            font:var(--font-B);
+        }
+        .top-picks__titles {
+            display: flex;
+            overflow-x: scroll;
+            width: 100%;
+            scroll-behavior: smooth;
+        }
+        .top-picks__titles::-webkit-scrollbar {
+            display: none;
+        }
+        .top-picks__titles img {
+            height: 35vh;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 15px;
+            margin-right: 15px; 
+            border-radius: 4px;
+        }
+        .top-picks__titles img:hover {
+            transform: scale(1.1);
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+        }
+        .top-picks header {
+            padding: 3rem 2rem;
+            font-size: 1.5rem;
+        }
+        .left, .right {
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin: 10px;
+            
+        }
+        .left:hover , .right:hover {
+            background-color: white;
+            transition: background 0.1s ease;
+
+        }
+        .news {
+            margin: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+        }
+        .news article {
+            margin: 20px;
+            padding: 10px;
+            aspect-ratio: 16/9;
+            max-width: 15rem;
+            flex-grow: 1;
+            padding: 20px;
+            border-radius: 15px;
+            background-color:var(--font-background-articles);
+            color:white;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        }
+        .news article header {
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: var(--font-B);
+        }
+
+        .news article section {
+            text-align: justify;
+            color:white;
+        }
+        footer {
+            background-color: var(--color-element-A);
+            height: 5vh;
+            color: white;
+        }
+        @media screen and (min-width: 624px) {
+            .nav-primary__links {
+                display: flex;
+                flex-wrap: nowrap;
+                justify-content: space-evenly;
+
+            }
+
+            .nav-primary__links li {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+        }
+
+        /* LAPTOP */
+
+        @media screen and (min-width: 750px) {
+            .nav-primary__links {
+                justify-content: flex-start;
+            }
+        }
+    </style>
+    <title>Main page</title>
+</head>
+
+<body>
+    <nav class="nav-primary">
+        <ul class="nav-primary__links">
+            <li><a href="index.html">FreeTimeZone.cz</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
+            <li><a href="videogames.html">Videogames</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+        <form id="nav-primary__search">
+            <input type="text">
+            <input type="button" value="search">
+        </form>
+        <a href="login.html">Login</a>
+    </nav>
+    <div class="top-picks top-picks--movies">
+        <header>Movies - Top picks for you</header>
+        <div>
+            <span class="left top-pics--movies__left"><img src="icons/left-arrow.png"></span>
+            <span class="top-picks__titles top-picks__titles--movies">
+                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
+                <img src="images/movies/el_camino.jpg" alt="el camino">
+                <img src="images/movies/interstellar.webp" alt="interstellar">
+                <img src="images/movies/john_wick.jpg" alt="John Wick">
+                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
+                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
+                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
+                <img src="images/movies/el_camino.jpg" alt="el camino">
+                <img src="images/movies/interstellar.webp" alt="interstellar">
+                <img src="images/movies/john_wick.jpg" alt="John Wick">
+                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
+                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
+                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
+                <img src="images/movies/el_camino.jpg" alt="el camino">
+                <img src="images/movies/interstellar.webp" alt="interstellar">
+                <img src="images/movies/john_wick.jpg" alt="John Wick">
+                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
+                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
+                
+            </span>
+            <span class="right top-pics--movies__right"><img src="icons/right-arrow.png"></span>
+            <script>
+                let titles_movies = document.querySelector(".top-picks__titles--movies");
+                const images_movies = Array.from(titles_movies.querySelectorAll("img"));
+                
+                let index_movies = 0;
+                document.querySelector(".top-pics--movies__right").addEventListener("click", () =>{
+                    titles_movies.LastChild(images_movies[index_movies]);
+                    const image_width = images_movies[index_movies].clientWidth + 30;
+                    titles_movies.scrollLeft += image_width;
+                    if ((index_movies + 1) == images_movies.length){
+                        index_movies = 0;
+                    } else {
+                        index_movies++;
+                    }
+                });
+                document.querySelector(".top-pics--movies__left").addEventListener("click", () => {
+                    if (titles_movies.scrollLeft != 0){
+                    const image_width = images_movies[index_movies - 1].clientWidth + 30;
+                    titles_movies.scrollLeft -= image_width;
+
+                    
+                    if (index_movies == 0){
+                        index_movies = images_movies.length - 1;
+                    } else {
+                        index_movies--;
+                    }
+                }
+                    console.log(index_movies);
+                });
+                
+            </script>
+        </div>
+    </div>
+    <div class="top-picks top-picks--TVshows">
+        <header>Tv shows - Top picks for you</header>
+        <div>
+            <span class="left top-picks--TVshows__left"><img src="icons/left-arrow.png"></span>
+            <span class="top-picks__titles top-picks__titles--TVshows">
+                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
+                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
+                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
+                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
+                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
+                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
+                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
+                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
+                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
+                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
+                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
+                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
+                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
+                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
+                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
+                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+            </span>
+            <span class="right top-picks--TVshows__right"><img src="icons/right-arrow.png"></span>
+        </div>
+    </div>
+    <div class="top-picks top-picks--videogames">
+        <header>Videogames - Top picks for you</header>
+        <div>
+            <img src="icons/left-arrow.png" class="left top-picks--videogames__left">
+            <div class="top-picks__titles top-picks__titles--videogames">
+                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
+                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
+                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
+                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
+                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
+                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
+                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
+                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
+                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
+                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
+                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
+                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
+                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
+                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
+                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
+                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+            </div>
+            <img src="icons/right-arrow.png" class="right top-picks--videogames__right">
+
+        </div>
+    </div>
+
+    <script>
+        /*
+               const images = Array.from(scroll.querySelectorAll("img"));
+    
+                var velikost_obrazku = 0;
+                images.forEach(element => {
+                    velikost_obrazku += element.clientWidth + 8;
+                });
+                console.log("velikost = " + velikost_obrazku);
+    
+                let index = 0;
+    
+    
+    
+                LEFT.addEventListener("click", () => {
+                    if (index > 0) {
+                        const nextImageWidth = images[index].clientWidth + 8;
+                        scroll.style.scrollBehavior = "smooth";
+                        scroll.scrollLeft -= nextImageWidth;
+                        index--;
+                    }
+                });
+                RIGHT.addEventListener("click", () => {
+                    if (index < images.length - 1) {
+                        const nextImageWidth = images[index].clientWidth + 8;
+                        scroll.style.scrollBehavior = "smooth";
+                        scroll.scrollLeft += nextImageWidth;
+                        index++;
+                        console.log(scroll.scrollLeft);
+                    }
+                });
+                */
+    </script>
+    <div class="news">
+        <article>
+            <header>Minecraft 2: Mojang Reinvents the Block!</header>
+            <section>The long-awaited moment is here—Mojang Studios has officially announced Minecraft 2! Yes,
+                you
+                read that right. After a decade of playing with blocks, they’re bringing us… even more blocks!
+                Friends, the revolution is upon us.</section>
+        </article>
+        <article>
+            <header>Half-Life 3 Announced! Valve Breaks Its Silence After Only 20 Years</header>
+            <section>After 20 years of memes, speculation, and fan theories, Valve has broken its silence with a
+                statement that no one expected but everyone secretly hoped for. “Yes, Half-Life 3 is real!”
+                announced company founder Gabe Newell, as nostalgic tears of relief rolled down his face.
+            </section>
+        </article>
+        <article>
+            <header>Breaking Bad 2 Announced: “More Chemistry Left to Explode”</header>
+            <section>In a move nobody saw coming, AMC announced a sequel series to the wildly successful
+                “Breaking Bad” called “Breaking Bad 2: Even More Broken.” Set to premiere next year, this
+                unprecedented revival promises to delve deeper into “untapped, unexploded” territory that fans
+                never knew they needed but will certainly question.</section>
+        </article>
+    </div>
+    <footer>
+        &copy;Created in 2024
+    </footer>
+</body>
+
+</html>
