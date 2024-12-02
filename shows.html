@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Movies</title>
+</head>
+
+<body>
+    <nav class="nav-primary">
+        <ul class="nav-primary__links">
+            <li><a href="index.html">FreeTimeZone.cz</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
+            <li><a href="videogames.html">Videogames</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+        <form id="nav-primary__search">
+            <input type="text">
+            <input type="button" value="search">
+        </form>
+        <a href="login.html">Login</a>
+    </nav>
+    <div id = "btn--filter" onclick="openfilters()"><img src="icons/filter.png" ></div>   
+    <aside class="filters">
+        Filters<br><br>
+        <form>
+            Rating<br><br>
+            Min rating <input type="number" min="0" max="100" name="min-rating" id="min"><br><br>
+            Max rating <input type="number" min="0" max="100" name="max-rating" id="max"><br><br>
+            Release date<br><br>
+            <input type="range" min="1980" max="2024" value="2000" id="year"
+                oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output><br><br>
+            Platforms<br><br>
+            <input type="checkbox" name="Netflix"> Netflix<br><br>
+            <input type="checkbox" name="MAX"> MAX<br><br>
+            <input type="checkbox" name="Prime video"> Prime video <br><br>
+            <input type="checkbox" name="Disney+"> Disney+ <br><br>
+        </form>
+    </aside>
+    <script>
+        let open = false;
+
+        function openfilters(){
+            if (!open){
+                document.querySelector(".filters").style.display = "block";
+                open = true;
+            } else {
+                document.querySelector(".filters").style.display = "none";
+                open = false;
+            }
+            
+        }
+
+
+    </script>
+    <div class="list">
+        <div class = "list__title"><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"><div class="list__title__rating">95%</div><div class = "list__title__description"><div class = "list__title__description__name">Better Call Saul</div>Year: 2015 - 2022<br>Director: Vince Gilligan<br>Actors: Bob Odenkirk...</div></div>
+        <div class = "list__title"><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"><div class="list__title__rating">99%</div><div class = "list__title__description"><div class = "list__title__description__name">Breaking Bad</div>Year: 2008 - 2013<br>Director: Vince Gilligan<br>Actors: Bryan Cranston...</div></div>
+        <div class = "list__title"><img src="images/tv shows/true_detective.jpg" alt="True Detective"><div class="list__title__rating">90%</div><div class = "list__title__description"><div class = "list__title__description__name">True Detective</div>Year: 2014 - <br>Director: Cary Joji Fukunaga<br>Actors: Woody Harrelson...</div></div>
+        <div class = "list__title"><img src="images/tv shows/twd.webp" alt="The Walking Dead"><div class="list__title__rating">84%</div><div class = "list__title__description"><div class = "list__title__description__name">The Walking Dead</div>Year: 2010 - 2022<br>Director:  Frank Darabont<br>Actors: Andrew Lincoln...</div></div>
+        <div class = "list__title"><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"><div class="list__title__rating">95%</div><div class = "list__title__description"><div class = "list__title__description__name">Better Call Saul</div>Year: 2015 - 2022<br>Director: Vince Gilligan<br>Actors: Bob Odenkirk...</div></div>
+        <div class = "list__title"><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"><div class="list__title__rating">99%</div><div class = "list__title__description"><div class = "list__title__description__name">Breaking Bad</div>Year: 2008 - 2013<br>Director: Vince Gilligan<br>Actors: Bryan Cranston...</div></div>
+        <div class = "list__title"><img src="images/tv shows/true_detective.jpg" alt="True Detective"><div class="list__title__rating">90%</div><div class = "list__title__description"><div class = "list__title__description__name">True Detective</div>Year: 2014 - <br>Director: Cary Joji Fukunaga<br>Actors: Woody Harrelson...</div></div>
+        <div class = "list__title"><img src="images/tv shows/twd.webp" alt="The Walking Dead"><div class="list__title__rating">84%</div><div class = "list__title__description"><div class = "list__title__description__name">The Walking Dead</div>Year: 2010 - 2022<br>Director:  Frank Darabont<br>Actors: Andrew Lincoln...</div></div>
+        <div class = "list__title"><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"><div class="list__title__rating">95%</div><div class = "list__title__description"><div class = "list__title__description__name">Better Call Saul</div>Year: 2015 - 2022<br>Director: Vince Gilligan<br>Actors: Bob Odenkirk...</div></div>
+        <div class = "list__title"><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"><div class="list__title__rating">99%</div><div class = "list__title__description"><div class = "list__title__description__name">Breaking Bad</div>Year: 2008 - 2013<br>Director: Vince Gilligan<br>Actors: Bryan Cranston...</div></div>
+        <div class = "list__title"><img src="images/tv shows/true_detective.jpg" alt="True Detective"><div class="list__title__rating">90%</div><div class = "list__title__description"><div class = "list__title__description__name">True Detective</div>Year: 2014 - <br>Director: Cary Joji Fukunaga<br>Actors: Woody Harrelson...</div></div>
+        <div class = "list__title"><img src="images/tv shows/twd.webp" alt="The Walking Dead"><div class="list__title__rating">84%</div><div class = "list__title__description"><div class = "list__title__description__name">The Walking Dead</div>Year: 2010 - 2022<br>Director:  Frank Darabont<br>Actors: Andrew Lincoln...</div></div>
+        <div class = "list__title"><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"><div class="list__title__rating">95%</div><div class = "list__title__description"><div class = "list__title__description__name">Better Call Saul</div>Year: 2015 - 2022<br>Director: Vince Gilligan<br>Actors: Bob Odenkirk...</div></div>
+        <div class = "list__title"><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"><div class="list__title__rating">99%</div><div class = "list__title__description"><div class = "list__title__description__name">Breaking Bad</div>Year: 2008 - 2013<br>Director: Vince Gilligan<br>Actors: Bryan Cranston...</div></div>
+        <div class = "list__title"><img src="images/tv shows/true_detective.jpg" alt="True Detective"><div class="list__title__rating">90%</div><div class = "list__title__description"><div class = "list__title__description__name">True Detective</div>Year: 2014 - <br>Director: Cary Joji Fukunaga<br>Actors: Woody Harrelson...</div></div>
+        <div class = "list__title"><img src="images/tv shows/twd.webp" alt="The Walking Dead"><div class="list__title__rating">84%</div><div class = "list__title__description"><div class = "list__title__description__name">The Walking Dead</div>Year: 2010 - 2022<br>Director:  Frank Darabont<br>Actors: Andrew Lincoln...</div></div>
+    </div>
+
+
+</body>
+
+</html>
