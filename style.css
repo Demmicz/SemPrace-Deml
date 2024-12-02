@@ -18,6 +18,7 @@
     --font-M: "Roboto-medium";
     --font-B: "Roboto-black";
     --font-background-articles: #03122F;
+    --background--rating: #b50a26;
 }
 
 body {
@@ -171,7 +172,14 @@ footer {
     color: white;
 
 }
+.list__title {
+    position: relative;
+    margin: 15px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+    
+}
 .list__title img {
     height: 300px;
     margin-left: 15px;
@@ -179,36 +187,43 @@ footer {
     margin-top: 15px;
     margin-bottom: 5px;
 }
-.list__title {
-    margin: 15px;
-    padding: 15px;
-    border: 1px solid white;
-    
+.list__title img:hover {
+    transform: scale(1.01);
 }
-.list__title__description{
+.list__title__rating{
+    position: absolute;
+    font: var(--font-B);
+    font-size: 1.5rem;
+    color: black;
+    z-index: 1px;
+    top: 15px;
+    left: 15px;
+    margin: 15px;
+    padding: 0.8rem;
+    background-color:var(--background--rating);
+    border-bottom-right-radius: 2px;  
+}
+.list__title img:hover + .list__title__rating{
+    visibility: hidden;
+}
+.list__title__description {
     margin-left: 15px;
     margin-right: 15px;
+    text-overflow: ellipsis;
+
 }
 .list__title__description__name {
     color: black;
     font: var(--font-B);
     font-size: 24px;
-    margin: 0;
+    margin-bottom: 10px;
     text-justify: center;
+
 }
 
-.list__title__description__rating{
-    float: right;
-    font-size: 32px;
-    
-}
 
 /* Movies */
-.main__movies {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: ;
-}
+
 @media screen and (min-width: 624px) {
     .nav-primary__links {
         display: flex;
