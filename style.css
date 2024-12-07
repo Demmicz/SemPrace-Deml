@@ -263,6 +263,46 @@ footer {
 .title__description > p {
     text-align: justify;
 }
+.title__comments__comment{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas: "header"
+                         "form";
+    background-color: white;
+    border: #03122F 1px solid;
+    width: min-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+.title__comments__comment > header {
+    grid-area: "header";
+}
+.title__comments__comment > form {
+    grid-area: "form" ;
+    justify-content: end;
+}
+.title__comments__comment textarea {
+    grid-area: "textarea";
+    height: 100px;
+    margin: 5px;
+    aspect-ratio: 2;
+    resize: none;
+    border: none;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    border-radius: 2px;
+}
+.title__comments__comment button {
+    display: block;
+    margin: 5px;
+    padding: 5px 7px;
+    justify-self: end;
+    color: white;
+    background-color:#03122F;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
 @media screen and (min-width: 624px) {
     .nav-primary__links {
         display: flex;
