@@ -394,6 +394,42 @@ footer {
     font-size: 30px;
 }
 
+/* News */
+.news {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+.news article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr;
+    margin: 20px;
+    padding: 10px;
+    aspect-ratio: 16/9;
+    max-width: 15rem;
+    flex-grow: 1;
+    padding: 20px;
+    border-radius: 15px;
+    background-color:var(--font-background-articles);
+    color:white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.news article header {
+    align-self: center;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: var(--font-B);
+}
+
+.news article section {
+    text-align: justify;
+    color:white;
+}
+
 @media screen and (min-width: 624px) {
     /* navbar */
     .nav-primary__links {
@@ -449,7 +485,8 @@ footer {
         height: 1vh;
         display: grid;
         grid-template-columns: 1fr 0.5fr;
-        grid-template-rows: auto auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-column-gap: 100px;
     }
     .title__header {
         grid-column: 1 / 2;
@@ -457,22 +494,24 @@ footer {
     }
     .title__comments__other-comments{
         grid-column: 2 / 3;
-        grid-row: 2 / 3;
+        grid-row: 1 / 2;
     }
     .title__description {
         grid-column: 1 / 2;
         grid-row: 2 / 3;
         display: grid;
         grid-template-columns: 20% 1fr;
-        grid-template-rows: 1fr;        
+        grid-template-rows: 50px auto;        
         justify-self: center;
+        width: 90%;
+        margin: 20px;
     }
     .title__description img {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
         display: inline;
         float: left;
-        width: 150px;
+        width: 90%;
     }
     .title__description__btns button{
         align-content: center;
@@ -480,7 +519,8 @@ footer {
     .title__user-comment{
         grid-column: 1 / 2;
         grid-row: 3 / 4;
-        width: 50%;
+        width: 33%;
+        aspect-ratio: 3 / 2 ;
 
     }
     .title__comments__comment{
@@ -488,7 +528,7 @@ footer {
     }
     .title__comments {
         grid-column: 2 / 3;
-        grid-row: 3 / 5;
+        grid-row: 2 / 4;
         overflow-y: scroll;
     }
 }
