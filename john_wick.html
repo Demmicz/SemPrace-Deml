@@ -30,6 +30,11 @@
         </header>
         <div class="title__description">
             <img src="images/movies/john_wick.jpg" alt="John Wick">
+            <div class="title__description__btns">
+                <button onclick="openInfo()">Info</button>
+                <button onclick="openAbout()">About</button>
+                <button onclick="openPlatforms()">Platforms</button>
+            </div>
             <div class = "title__description__info">
             <span id = "title__description__info--bold">release date:</span> October 23 2014<br>
             <span id = "title__description__info--bold">Directed by:</span> Chad Stahelski, David Leitch<br>
@@ -42,8 +47,43 @@
                 person you'd want to provoke. But one reckless act unleashes a storm of vengeance that shakes the
                 criminal underworld to its core. As Wick takes justice into his own hands, both old allies and enemies
                 are forced to reckon with the legend they thought they'd never face again.</p>
-
+        
+                <ul class="title__description__platforms">
+                    <li>Netflix</li>
+                    <li>AppleTv</li>
+                </ul>
         </div>
+       
+        <script>
+            const info = document.querySelector(".title__description__info");
+            const about = document.querySelector(".title__description__about");
+            const platforms = document.querySelector(".title__description__platforms");
+            let active = info;
+            console.log(active);
+
+            active.style.display = "block";
+
+            
+
+            function openAbout(){
+                active.style.display = "none";
+                active = about;
+                active.style.display = "block";
+            }
+            function openInfo(){
+                active.style.display = "none";
+                active = info;
+                active.style.display = "block";
+            }
+            function openPlatforms(){
+                active.style.display = "none";
+                active = platforms;
+                active.style.display = "block";
+            }
+
+
+
+        </script>
         <div class="title__user-comment">
 
             <header>
@@ -57,8 +97,8 @@
                 </button>
             </form>
         </div>
-        <header class="title__comments__other-comments"><h2>Other comments</h2></header>
-        <div class="title__comments">
+        <header class="title__comments__other-comments"><h2>Other comments</h2></header>          
+        <div class="title__comments">        
             <div class="title__comments__comment">
                     <header>
                         username

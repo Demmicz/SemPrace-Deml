@@ -138,6 +138,7 @@ footer {
     float: none;
 }
 
+/* movies.html, tvshows.html and videogames.html */
 #btn--filter{
     background-color: white;
     width: 100%;
@@ -164,7 +165,6 @@ footer {
     background-color: var(--color-element-A);
 
 }
-/* movies.html, tvshows.html and videogames.html */
 
 .list {
     display: grid;
@@ -250,6 +250,7 @@ footer {
 
 }
 .title__description {
+    border-radius: 10px;
     margin: 20px;
     background-color: white;
     padding: 10px;
@@ -262,10 +263,34 @@ footer {
     margin-right: auto;
     margin-bottom: 10px;
 }
-.title__description > p {
+.title__description__btns {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+.title__description__btns button {
+    background-color: var(--color-background-A);
+    color: white;
+    margin: 5px;
+}
+.title__description__info {
+    display: none;
+    text-align: justify;
+}
+#title__description__info--bold {
+    font: var(--font-B);
+    font-weight: 600;
+}
+.title__description__about {
+    display: none;
     padding: 10px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: justify;
+}
+.title__description__platforms{
+    display: none;
 }
 .title__user-comment{
     width: calc(90% - 20px);
@@ -324,7 +349,7 @@ footer {
 }
 .title__user-comment__rating {
     font-size: 16px;
-    width:20px;
+    width:35px;
     border: none;
     border-radius: 1px;
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
@@ -336,7 +361,8 @@ footer {
     flex-wrap: wrap;
 }
 .title__comments__comment {
-    width: calc(90% - 20px);
+    width: 90%;
+    margin: 20px;
     aspect-ratio: 2;
     display: grid;
     grid-template-columns: 1fr;
@@ -367,14 +393,9 @@ footer {
     margin-left: 20px;
     font-size: 30px;
 }
-.title__description__info {
-    text-align: justify;
-}
-#title__description__info--bold {
-    font: var(--font-B);
-    font-weight: 600;
-}
+
 @media screen and (min-width: 624px) {
+    /* navbar */
     .nav-primary__links {
         display: flex;
         flex-wrap: nowrap;
@@ -386,11 +407,18 @@ footer {
         margin-top: 15px;
         margin-bottom: 15px;
     }
+    /*Styles for all movies, shows and videogames*/
+    .title__comments__comment {
+        width: 40%;
+    }
+    .title__description img {
+        width: 50%;
+    }
 }
 
 /* LAPTOP */
-
 @media screen and (min-width: 750px) {
+    /*navbar*/
     .nav-primary__links {
         justify-content: flex-start;
     }
@@ -407,8 +435,60 @@ footer {
         width: 20%;
         height: 100vh;
     }
+    /*movies.html, tvshows.html and videogames.html*/
     .list {
         margin-left: 20%;
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (min-width: 978px) {
+    
+    /*Styles for all movies, shows and videogames*/
+    .main--title{
+        font-size: 1.2rem;
+        height: 1vh;
+        display: grid;
+        grid-template-columns: 1fr 0.5fr;
+        grid-template-rows: auto auto auto auto;
+    }
+    .title__header {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+    .title__comments__other-comments{
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+    .title__description {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        display: grid;
+        grid-template-columns: 20% 1fr;
+        grid-template-rows: 1fr;        
+        justify-self: center;
+    }
+    .title__description img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 3;
+        display: inline;
+        float: left;
+        width: 150px;
+    }
+    .title__description__btns button{
+        align-content: center;
+    }
+    .title__user-comment{
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+        width: 50%;
+
+    }
+    .title__comments__comment{
+        width: 90%;
+    }
+    .title__comments {
+        grid-column: 2 / 3;
+        grid-row: 3 / 5;
+        overflow-y: scroll;
     }
 }
