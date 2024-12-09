@@ -22,6 +22,17 @@
         <a href="login.html">Login</a>
     </nav>
         <main class="main--news">
+            <aside class="news__aside">
+                <div class="news__aside__sort">
+                    Sort<br><br>
+                    <label>from latest to oldest <input type="radio" name = "sort"></label>
+                    <label>from oldest to latest <input type="radio" name = "sort"></label>
+                </div>
+                <form class="news__aside">
+                    Email <input type="email">
+                    <button>Submit</button>
+                </form>
+            </aside>
             <div class="news">
                 <article id="news--videogame"> 
                     <header>Minecraft 2: Mojang Reinvents the Block!</header>
@@ -74,11 +85,7 @@
                     <span id="news__article__release-date"> December 1st, 2024</span>
                 </article>                
             </div>
-            <aside class="news__newsletter">
-                <form>
-                    
-                </form>
-            </aside>
+            
         </main>
     </nav>
 </body>
