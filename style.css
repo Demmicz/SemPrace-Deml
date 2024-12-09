@@ -24,7 +24,6 @@
     --font-I: "Roboto-italic";
     --font-background-articles: #03122F;
     --background--rating: #b50a26;
-    --list-image-width: ;
 }
 
 body {
@@ -191,6 +190,10 @@ footer {
     background-color: var(--color-element-A);
 
 }
+.filters::first-line {
+    font-weight: 600;
+    font-size: 24px;
+}
 
 .list {
     display: grid;
@@ -213,7 +216,6 @@ footer {
 }
 .list__title__picture img {
     height: 300px;
-    width: var(--list-image-width);
     object-fit:inherit;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -320,8 +322,10 @@ footer {
 }
 .title__description__info {
     display: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     text-align: justify;
     margin: 10px;
+    padding: 10px;
 }
 #title__description__info--bold {
     font: var(--font-B);
@@ -335,6 +339,7 @@ footer {
 }
 .title__description__platforms{
     display: none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .title__description__episodes{
     display: none;
@@ -345,8 +350,11 @@ footer {
     padding: 10px 0px;
     font-size: 1rem;
 }
-.title__description__episodes > #episodes {
-    
+.title__description__episodes > #episodes > ol{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 .title__user-comment{
     width: calc(90% - 20px);
@@ -553,7 +561,7 @@ footer {
         position: sticky;
         top: 0;
         left: 0;
-        padding: 10px;
+        padding: 40px;
         display: block;
         float: left;
         width: 20%;
@@ -617,5 +625,19 @@ footer {
         grid-column: 2 / 3;
         grid-row: 2 / 4;
         overflow-y: scroll;
+    }
+}
+@media screen and (min-width: 1024px) {
+    /* news */
+    .news {
+        display: block;
+    }
+    .news article {
+        aspect-ratio: 16/1;
+        width: 50%;
+        max-width: none;
+    }
+    .news article header{
+        text-align: left;
     }
 }

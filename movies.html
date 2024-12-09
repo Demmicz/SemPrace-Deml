@@ -38,6 +38,15 @@
             <input type="checkbox" name="MAX"> MAX<br><br>
             <input type="checkbox" name="Prime video"> Prime video <br><br>
             <input type="checkbox" name="Disney+"> Disney+ <br><br>
+            Genre<br><br>
+            <label><input type="checkbox" name="genre" value="action"> Action</label><br>
+            <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label><br>
+            <label><input type="checkbox" name="genre" value="drama"> Drama</label><br>
+            <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label><br>
+            <label><input type="checkbox" name="genre" value="horror"> Horror</label><br>
+            <label><input type="checkbox" name="genre" value="thriller"> Thriller</label><br>
+            <label><input type="checkbox" name="genre" value="comedy"> Comedy</label><br>
+            <label><input type="checkbox" name="genre" value="romance"> Romance</label><br><br>
         </form>
     </aside>
     <script>
@@ -163,19 +172,6 @@
             </div>
 
     </div>
-    <script>
-        let images = Array.from(document.querySelector(".list").querySelectorAll("img"));
-
-        let min = images[0].clientWidth;
-
-        for (let i = 1; i < images.length; i++) {
-            if (min > images[i].width) {
-                min = images[i].width;
-            }
-        }
-
-        document.documentElement.style.setProperty('--list-image-width', min + 'px');
-    </script>
 
 
 </body>
