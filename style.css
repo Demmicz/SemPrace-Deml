@@ -487,6 +487,13 @@ footer {
     background-color:var(--font-background-articles);
     color:white;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
+}
+.news article:hover {
+    transform: scale(1.05);
+}
+.news a {
+    text-decoration: none;
 }
 .news article header {
     align-self: center;
@@ -526,18 +533,18 @@ footer {
     width: 50px;
     filter: invert(1);
 }
-.main__article article {
+.main--article article {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     color: white;
     background-color: var(--color-element-A);
     padding: 10px;
 }
-.main__article article section {
+.main--article article section {
     text-justify: justify;
     color: white;
     margin: 10px;
 }
-.main__article article header {
+.main--article article header {
     margin-left: 10px;
 }
 .article__release-date {
@@ -565,9 +572,6 @@ footer {
 .article__user-comment > header {
     color: white;
     grid-area: "header";
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin: 5px;
 }
 .article__user-comment > form {
@@ -612,6 +616,47 @@ footer {
     box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     
 }
+.article__comments__other-comments h2{
+    color:white;
+    font: var(--font-B);
+    margin-left: 20px;
+    font-size: 30px;
+}
+.article__comments {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.article__comments__comment {
+    width: 90%;
+    margin: 20px;
+    aspect-ratio: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30px 1fr;
+    grid-template-areas: "header"
+                         "review";
+    background-color: white;
+    border: #03122F 1px solid;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: var(--color-element-A);
+    color: white;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+.article__comments__comment header {
+    grid-area: "header";
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+}
+.article__comments__comment p {
+    grid-area: "review";
+    margin: 5px;
+    text-align: justify;
+}
 @media screen and (min-width: 425px) {
     .login form {
         grid-template-columns: 40% 60%;
@@ -623,6 +668,14 @@ footer {
     }
     .login form label {
         align-content: center;
+    }
+}
+@media screen and (min-width: 586px) {
+    .article__user-comment{
+        width: 60%;
+    }
+    .article__comments__comment{
+        width: 60%;
     }
 }
 @media screen and (min-width: 624px) {
@@ -672,19 +725,18 @@ footer {
         margin-left: 20%;
         grid-template-columns: repeat(3, 1fr);
     }
+    /* article.html */
+    .main--article article {
+        width: 90%;
+        margin: auto;
+    }
+    .article__user-comment{
+        width: 400px;
+    }
+    .article__comments__comment{
+        width: 400px;
+    }
 
-    /* article.html*/
-    .main__article article{
-        float: right;
-        width: 80%;
-    }
-    .article__author {
-        display: block;
-        float: right;
-        color: white;
-        font-size: 1rem;
-        margin: 30px;
-    }
 }
 @media screen and (min-width: 978px) {
     
