@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Breaking Bad</title>
+</head>
+
+<body>
+    <nav class="nav-primary">
+        <ul class="nav-primary__links">
+            <li><a href="index.html">FreeTimeZone.cz</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
+            <li><a href="videogames.html">Videogames</a></li>
+            <li><a href="news.html">News</a></li>
+        </ul>
+        <form id="nav-primary__search">
+            <input type="text">
+            <input type="button" value="search">
+        </form>
+        <a href="login.html">Login</a>
+    </nav>
+    <main class="main--title">
+        <header class="title__header">
+            <span class="title__header__name">Breaking Bad</span>
+            <div class="title__header__rating">98 %</div>
+        </header>
+        <div class="title__description">
+            <img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad">
+            <div class="title__description__btns">
+                <button onclick="openInfo()">Info</button>
+                <button onclick="openAbout()">About</button>
+                <button onclick="openPlatforms()">Platforms</button>
+                <button onclick="openEpisodes()">Episodes</button>
+            </div>
+            <div class="title__description__info">
+                <span id="title__description__info--bold">First episode:</span> January 20, 2008<br>
+                <span id="title__description__info--bold">Last episode:</span> September 29, 2013<br>
+                <span id="title__description__info--bold">Created by:</span> Vince Gilligan<br>
+                <span id="title__description__info--bold">Cast:</span> Bryan Cranston, Aaron Paul, Anna Gunn, Dean Norris, Betsy Brandt, RJ Mitte, Bob Odenkirk, Giancarlo Esposito<br><br>
+            </div>
+
+            <p class="title__description__about">Breaking Bad tells the story of Walter White, a high school chemistry teacher turned methamphetamine manufacturer. Facing a terminal cancer diagnosis, he partners with former student Jesse Pinkman to secure his family's financial future, but their descent into the criminal underworld has devastating consequences.</p>
+
+            <div class="title__description__platforms">
+                <ul>
+                    <li>Netflix</li>
+                    <li>Amazon Prime</li>
+                </ul>
+            </div>
+            <div class="title__description__episodes">
+                <select onchange="loadSeason()" id = "seasons">
+                    <option>Choose season</option>
+                    <option value="season_1">Season 1</option>
+                    <option value="season_2">Season 2</option>
+                    <option value="season_3">Season 3</option>
+                    <option value="season_4">Season 4</option>
+                    <option value="season_5">Season 5</option>
+                </select>
+                <div id = "episodes">
+
+                </div>         
+            </div>
+        </div>
+
+        <script>
+            const info = document.querySelector(".title__description__info");
+            const about = document.querySelector(".title__description__about");
+            const platforms = document.querySelector(".title__description__platforms");
+            let episodes = document.querySelector(".title__description__episodes");
+            let active = info;
+
+            active.style.display = "block";
+
+            function openAbout() {
+                active.style.display = "none";
+                active = about;
+                active.style.display = "block";
+            }
+            function openInfo() {
+                active.style.display = "none";
+                active = info;
+                active.style.display = "block";
+            }
+            function openPlatforms() {
+                active.style.display = "none";
+                active = platforms;
+                active.style.display = "block";
+            }
+            function openEpisodes() {
+                active.style.display = "none";
+                active = episodes;
+                active.style.display = "block";
+            }
+
+            function loadSeason(){
+                let value = document.getElementById("seasons").value;
+                console.log(value);
+                let episodes = document.getElementById("episodes");
+                switch(value){
+                    case "season_1":
+                        episodes.innerHTML = "<ol><li>Pilot</li><li>Cat's in the Bag...</li><li>...And the Bag's in the River</li><li>Cancer Man</li><li>Gray Matter</li><li>Crazy Handful of Nothin'</li><li>A No-Rough-Stuff-Type Deal</li></ol>";
+                        break;
+                    case "season_2":
+                        episodes.innerHTML = "<ol><li>Seven Thirty-Seven</li><li>Grilled</li><li>Bit by a Dead Bee</li><li>Down</li><li>Breakage</li><li>Peekaboo</li><li>Negro y Azul</li><li>Better Call Saul</li><li>4 Days Out</li><li>Over</li><li>Mandala</li><li>Phoenix</li><li>ABQ</li></ol>";
+                        break;
+                    case "season_3":
+                        episodes.innerHTML = "<ol><li>No Más</li><li>Caballo Sin Nombre</li><li>I.F.T.</li><li>Green Light</li><li>Mas</li><li>Sunset</li><li>One Minute</li><li>I See You</li><li>Kafkaesque</li><li>Fly</li><li>Abiquiú</li><li>Half Measures</li><li>Full Measure</li></ol>";
+                        break;
+                    case "season_4":
+                        episodes.innerHTML = "<ol><li>Box Cutter</li><li>Thirty-Eight Snub</li><li>Open House</li><li>Bullet Points</li><li>Shotgun</li><li>Cornered</li><li>Problem Dog</li><li>Hermanos</li><li>Bug</li><li>Salud</li><li>Crawl Space</li><li>End Times</li><li>Face Off</li></ol>";
+                        break;
+                    case "season_5":
+                        episodes.innerHTML = "<ol><li>Live Free or Die</li><li>Madrigal</li><li>Hazard Pay</li><li>Fifty-One</li><li>Dead Freight</li><li>Buyout</li><li>Say My Name</li><li>Gliding Over All</li><li>Blood Money</li><li>Buried</li><li>Confessions</li><li>Rabid Dog</li><li>To'hajiilee</li><li>Ozymandias</li><li>Granite State</li><li>Felina</li></ol>";
+                        break;
+                    default:
+                        episodes.innerHTML = " ";
+                }
+            }
+        </script>
+
+        <div class="title__user-comment">
+            <header>
+                username
+                <span><input type="number" min="1" max="10" class="title__user-comment__rating"> / 10 </span>
+            </header>
+            <form>
+                <textarea></textarea>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+
+        <header class="title__comments__other-comments"><h2>Other comments</h2></header>
+        <div class="title__comments">
+            <div class="title__comments__comment">
+                <header>
+                    MethMaster01
+                    <span>10 / 10</span>
+                </header>
+                <p>An absolute masterpiece! The character development and storytelling are unparalleled. Bryan Cranston delivers one of the best performances in TV history.</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    ChemistryFan
+                    <span>9 / 10</span>
+                </header>
+                <p>The transformation of Walter White from a struggling teacher to a criminal mastermind is both terrifying and fascinating. A must-watch!</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    JessePinkmanFan
+                    <span>8 / 10</span>
+                </header>
+                <p>"Yo, Mr. White!" Jesse's journey is so emotional. He steals the show in many scenes. The series has a few slow episodes, but overall it's amazing.</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    TVAddict99
+                    <span>10 / 10</span>
+                </header>
+                <p>Breaking Bad sets the gold standard for TV dramas. Every season gets better, and the finale is perfection.</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    BetterCallMe
+                    <span>9 / 10</span>
+                </header>
+                <p>Saul Goodman is the best! His witty lines and charm add a lot to the series. I also loved the moral dilemmas Walter faces.</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    DarkDramaLover
+                    <span>7 / 10</span>
+                </header>
+                <p>The show is great, but it can be very intense at times. Not for everyone, but if you love deep, complex stories, this is for you.</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

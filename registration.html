@@ -8,14 +8,15 @@
 </head>
 <body>
     <div class = "login">
-        <form>
-            First Name <input type = "text" name = "First_name"><br><br>
-            Last Name <input type="text" name = "Last_Name"><br><br>
-            E-mail <input type="email" name = "email"><br><br>
-            Username <input type="text" name = "username"><br><br>
-            Password <input type = "password" name = "password"><br><br>
-            Confirm Password <input type = "password" name = "Confirm_password"><br><br>
-            <input type = "button" type = "register" value="Register">
+        <img src="icons/previous.png" onclick = "location.href = 'login.html'" id="registration__back">
+        <form id = "registration">
+            <label for="first_name">First Name</label><input type = "text" name = "First_name" id = "first_name">
+            <label for="last_name">Last Name</label><input type="text" name = "Last_Name" id="last_name">
+            <label for="email">Email</label><input type="email" name = "email" id="email">
+            <label for="username">Username</label><input type="text" name = "username" id="username">
+            <label for="password">Password</label><input type = "password" name = "password" id="password">
+            <label for="Confirm_password">Confirm password</label><input type = "password" name = "Confirm_password" id="Confirm_password">
+            <button type= "button" onclick = "location.href = 'index.html'" name = "registration">Register</button>
         </form>
     </div>
 </body>

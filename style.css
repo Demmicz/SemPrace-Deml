@@ -11,12 +11,17 @@
     font-family: Roboto-black;
     src: url("fonts/Roboto-Black.ttf");
 }
+@font-face {
+    font-family: Roboto-italic;
+    src: url("fonts/Roboto-Italic.ttf");
+}
 :ROOT {
     --color-background-A: #19305C;
     --color-element-A: #03122F;
     --font: "Roboto";
     --font-M: "Roboto-medium";
     --font-B: "Roboto-black";
+    --font-I: "Roboto-italic";
     --font-background-articles: #03122F;
     --background--rating: #b50a26;
     --list-image-width: ;
@@ -108,14 +113,18 @@ footer {
     background-color: var(--color-element-A);
     padding: 50px;
     border-radius: 15px;
-    width: fit-content;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center;
 }
 .login form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5px;
+    padding: 15px;
     color: white;
 }
 .login form input {
@@ -124,20 +133,37 @@ footer {
     padding: 5px;
     border-radius: 5px;
     color: black;
-    float: right;
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 5px;
 }
 
-.login form input[type="button"] {
-    padding: 10px;
-    font-size: 15px;
+.login form button {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1rem;
     background-color: white;
     cursor: pointer;
-    float: none;
+    justify-self: center;
 }
-
+.login form button:hover {
+    background-color: #fffe;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+#registration__back{
+    display: block;
+    width: 40px;
+    filter: invert(1);
+    padding: 5px;
+    top:0;
+    left: 0;
+}
+#registration__back:hover{
+    filter: none;
+    background-color: white;
+    border-radius: 5px;
+}
 /* movies.html, tvshows.html and videogames.html */
 #btn--filter{
     background-color: white;
@@ -179,38 +205,45 @@ footer {
     justify-self: center;
     
 }
-.list__title img {
-    display: block;
+.list__title__picture {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    margin: auto;
+}
+.list__title__picture img {
     height: 300px;
     width: var(--list-image-width);
     object-fit:inherit;
-    margin-left: auto;
-    margin-right: auto;
     margin-top: 15px;
     margin-bottom: 5px;
 }
+
 .list__title img:hover {
     transform: scale(1.01);
 }
 .list__title__rating{
+    display: block;
+    box-sizing: content-box;
     position: absolute;
     font: var(--font-B);
     font-size: 1.5rem;
     color: black;
     z-index: 1px;
-    top: 15px;
-    left: 15px;
-    margin: 15px;
+    top: 0.8rem;
+    left: 0;
     padding: 0.8rem;
     background-color:var(--background--rating);
     border-bottom-right-radius: 2px;  
 }
-.list__title img:hover + .list__title__rating{
-    visibility: hidden;
+.list__title__picture:hover  .list__title__rating{
+    display: none;
 }
 .list__title__description {
-    margin-left: 15px;
-    margin-right: 15px;
+    width: fit-content;
+    display: block;
+    margin: auto;
+    padding-bottom: 30px;
     color: white;
 
 }
@@ -222,7 +255,9 @@ footer {
     text-justify: center;
 
 }
-
+.list a {
+    text-decoration: none;
+}
 
 /*Styles for all movies, shows and videogames*/
 
@@ -269,15 +304,24 @@ footer {
     display: flex;
     justify-content: flex-start;
     width: 100%;
+    height: 50px;
 }
 .title__description__btns button {
     background-color: var(--color-background-A);
     color: white;
+    font-size: 1rem;
     margin: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.title__description__btns button:hover {
+    background-color: #23437d ;
 }
 .title__description__info {
     display: none;
     text-align: justify;
+    margin: 10px;
 }
 #title__description__info--bold {
     font: var(--font-B);
@@ -291,6 +335,18 @@ footer {
 }
 .title__description__platforms{
     display: none;
+}
+.title__description__episodes{
+    display: none;
+}
+.title__description__episodes select{
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 10px 0px;
+    font-size: 1rem;
+}
+.title__description__episodes > #episodes {
+    
 }
 .title__user-comment{
     width: calc(90% - 20px);
@@ -429,7 +485,35 @@ footer {
     text-align: justify;
     color:white;
 }
-
+#news--videogame {
+    border:#64F58D 10px solid;
+}
+#news--tvshow {
+    border: #C75000 10px solid;
+}
+#news--movie {
+    border: #621B00 10px solid;
+}
+#news__article__release-date{
+    font-family: var(--font-I);
+    font-weight: 300;
+    font-style: italic;
+    text-align: right;
+    margin-top: 5px;
+}
+@media screen and (min-width: 425px) {
+    .login form {
+        grid-template-columns: 40% 60%;
+    }
+    .login form label {
+        align-self: center;
+        justify-self: center;
+        margin-right: 10px;
+    }
+    .login form label {
+        align-content: center;
+    }
+}
 @media screen and (min-width: 624px) {
     /* navbar */
     .nav-primary__links {
@@ -438,10 +522,13 @@ footer {
         justify-content: space-evenly;
 
     }
-
     .nav-primary__links li {
         margin-top: 15px;
         margin-bottom: 15px;
+    }
+    /*movies.html, show.html and videogames.html*/
+    .list{
+        grid-template-columns: repeat(2, 1fr);
     }
     /*Styles for all movies, shows and videogames*/
     .title__comments__comment {
@@ -458,6 +545,7 @@ footer {
     .nav-primary__links {
         justify-content: flex-start;
     }
+    /*movies.html, tvshows.html and videogames.html*/
     #btn--filter {
         display: none;
     }
@@ -471,7 +559,6 @@ footer {
         width: 20%;
         height: 100vh;
     }
-    /*movies.html, tvshows.html and videogames.html*/
     .list {
         margin-left: 20%;
         grid-template-columns: repeat(3, 1fr);

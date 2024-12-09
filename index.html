@@ -236,37 +236,26 @@
                 <img src="images/movies/john_wick.jpg" alt="John Wick">
                 <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
                 <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
-                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
-                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
-                <img src="images/movies/el_camino.jpg" alt="el camino">
-                <img src="images/movies/interstellar.webp" alt="interstellar">
-                <img src="images/movies/john_wick.jpg" alt="John Wick">
-                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
-                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
-                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
-                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
-                <img src="images/movies/el_camino.jpg" alt="el camino">
-                <img src="images/movies/interstellar.webp" alt="interstellar">
-                <img src="images/movies/john_wick.jpg" alt="John Wick">
-                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
-                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
-                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
-                
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">           
             </span>
             <span class="right top-pics--movies__right"><img src="icons/right-arrow.png"></span>
             <script>
                 let titles_movies = document.querySelector(".top-picks__titles--movies");
                 const images_movies = Array.from(titles_movies.querySelectorAll("img"));
+
+                console.log(titles_movies);
                 
                 let index_movies = 0;
                 document.querySelector(".top-pics--movies__right").addEventListener("click", () =>{
-                    titles_movies.LastChild(images_movies[index_movies]);
                     const image_width = images_movies[index_movies].clientWidth + 30;
                     titles_movies.scrollLeft += image_width;
+                    
                     if ((index_movies + 1) == images_movies.length){
                         index_movies = 0;
+                        titles_movies.appendChild(images_movies[images_movies.length - 1]);
                     } else {
                         index_movies++;
+                        titles_movies.appendChild(images_movies[index_movies - 1]);
                     }
                 });
                 document.querySelector(".top-pics--movies__left").addEventListener("click", () => {
