@@ -69,38 +69,41 @@
             border-radius: 5px;
         }
 
+        .nav-primary__underUL{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+        }
         #login_under_ul {
-            display: block;
-            float: right;
-            margin: 8px;
+            margin-top: auto;
+            margin-bottom: auto;
         }
 
         #nav-primary__search {
             margin: 1rem;
-            display: inline-block;
         }
 
         #nav-primary__search input {
-            border-radius: 7px;
+            border-radius: 5px;
+            height: 30px;
         }
 
         #nav-primary__search input[type="button"] {
-            background-color: black;
+            background-color: var(--color-element-A);
             color: whitesmoke;
-            padding: 0.5rem 0.5rem;
             font-family: var(--font-A);
         }
 
         #nav-primary__search input[type="button"]:hover {
-            background-color: orange;
-            color: black;
+            background-color: #01050e;
             transition: background 0.1s ease;
             transition: color 0.1s ease;
             cursor: pointer;
         }
 
-        #nav_primary__search input[type="text"] {
-            padding: 0.5rem 0.625rem;
+        #nav-primary__search input[type="text"] {
+            margin-right: 10px;
         }
 
         .top-picks>div {
@@ -201,12 +204,15 @@
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
             cursor: pointer;
         }
-        .news article:hover{
+
+        .news article:hover {
             transform: scale(1.05);
         }
+
         .news a {
             text-decoration: none;
         }
+
         .news article header {
             align-self: center;
             text-align: center;
@@ -270,17 +276,26 @@
             <li><a href="news.html">News</a></li>
             <li><a href="login.html" id="ul__login">Login</a></li>
         </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class="nav-primary__underUL">
+            <form id="nav-primary__search">
+                <input type="text">
+                <input type="button" value="search">
+            </form>
+            <a href="login.html" id="login_under_ul">Login</a>
+        </div>
     </nav>
     <div class="top-picks top-picks--movies">
         <header>Movies - Top picks for you</header>
         <div>
             <span class="left top-pics--movies__left"><img src="icons/left-arrow.png"></span>
             <span class="top-picks__titles top-picks__titles--movies">
+                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
+                <img src="images/movies/el_camino.jpg" alt="el camino">
+                <img src="images/movies/interstellar.webp" alt="interstellar">
+                <img src="images/movies/john_wick.jpg" alt="John Wick">
+                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
+                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
                 <img src="images/movies/django_unchained.jpg" alt="django_unchained">
                 <img src="images/movies/el_camino.jpg" alt="el camino">
                 <img src="images/movies/interstellar.webp" alt="interstellar">
@@ -298,15 +313,14 @@
 
                 let index_movies = 0;
                 document.querySelector(".top-pics--movies__right").addEventListener("click", () => {
+                    titles_movies.appendChild(images_movies[index_movies]);
                     const image_width = images_movies[index_movies].clientWidth + 30;
                     titles_movies.scrollLeft += image_width;
 
                     if ((index_movies + 1) == images_movies.length) {
                         index_movies = 0;
-                        titles_movies.appendChild(images_movies[images_movies.length - 1]);
                     } else {
                         index_movies++;
-                        titles_movies.appendChild(images_movies[index_movies - 1]);
                     }
                 });
                 document.querySelector(".top-pics--movies__left").addEventListener("click", () => {
@@ -336,22 +350,9 @@
                 <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
                 <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
                 <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
-                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
-                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
-                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
-                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
-                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
-                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
-                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
-                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
-                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
-                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
-                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
-                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
-                <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
-                <span><img src="images/tv shows/better_call_saul.jpg" alt="Better Call Saul"></span>
-                <span><img src="images/tv shows/twd.webp" alt="The Walking Dead"></span>
-                <span><img src="images/tv shows/true_detective.jpg" alt="True detective"></span>
+                <span><img src="images/tv shows/money_heist.jpg" alt="Money Heist"></span>
+                <span><img src="images/tv shows/mr_robot.jpg" alt="Mr. Robot"></span>
+                <span><img src="images/tv shows/the_last_of_us.jpg" alt="The Last of Us"></span>
             </span>
             <span class="right top-picks--TVshows__right"><img src="icons/right-arrow.png"></span>
         </div>
@@ -365,22 +366,10 @@
                 <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
                 <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
                 <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
-                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
-                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
-                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
-                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
-                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
-                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
-                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
-                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
-                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
-                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
-                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
-                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
-                <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
-                <span><img src="images/videogames/bioshock_infinite.webp" alt="Bioshock Infinite"></span>
-                <span><img src="images/videogames/rdr.jpg" alt="Red Dead Redemption"></span>
-                <span><img src="images/videogames/dishonored.webp" alt="Dishonored"></span>
+                <span><img src="images/videogames/deus_ex_mankind_divided.jpg" alt="Deus Ex: Mankind Divided"></span>
+                <span><img src="images/videogames/dishonored2.jpg" alt="Dishonored 2"></span>
+                <span><img src="images/videogames/the_last_of_us.jpg" alt="The Last of Us"></span>
+                <span><img src="images/videogames/the_last_of_us_part2.jpg" alt="The Last of Us Part II"></span>
             </div>
             <img src="icons/right-arrow.png" class="right top-picks--videogames__right">
 

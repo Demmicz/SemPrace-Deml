@@ -753,6 +753,12 @@ footer {
     .list{
         grid-template-columns: repeat(2, 1fr);
     }
+    .list__title{
+        width: 85%;
+    }
+    .list__title__picture > img {
+        height: 280px;
+    }
     /*Styles for all movies, shows and videogames*/
     .title__comments__comment {
         width: 40%;
@@ -766,24 +772,7 @@ footer {
     .nav-primary__links {
         justify-content: flex-start;
     }
-    /*movies.html, tvshows.html and videogames.html*/
-    #btn--filter {
-        display: none;
-    }
-    .filters {
-        position: sticky;
-        top: 0;
-        left: 0;
-        padding: 40px;
-        display: block;
-        float: left;
-        width: 20%;
-        height: 100vh;
-    }
-    .list {
-        margin-left: 20%;
-        grid-template-columns: repeat(3, 1fr);
-    }
+
     /* article.html */
     .main--article article {
         width: 90%;
@@ -851,6 +840,20 @@ footer {
         grid-row: 2 / 4;
         overflow-y: scroll;
     }
+    /*movies.html, videogames.html and shows.html*/
+    #btn--filter {
+        display: none;
+    }
+    .filters {
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: 40px;
+        display: block;
+        float: left;
+        width: 20%;
+        height: 100vh;
+    }
 }
 @media screen and (min-width: 1024px) {
     /* news */
@@ -873,5 +876,9 @@ footer {
         float: right;
         width: 30%;
         height: 100vh;
+    }
+    /*movies.html, show.html and videogames.html*/
+    .list{
+        grid-template-columns: repeat(3, 1fr);
     }
 }
