@@ -24,17 +24,21 @@
         <a href="login.html">Login</a>
     </nav>
     <main class="main--news">
+    <div class = "news__opener--package">
+        <button class="news__aside-opener" onclick="openAside()"><img src="icons/menu.png"></button>
         <aside class="news__aside">
             <div class="news__aside__sort">
                 Sort<br><br>
-                <label>from latest to oldest <input type="radio" name="sort"></label>
-                <label>from oldest to latest <input type="radio" name="sort"></label>
+                <label>from latest to oldest <input type="radio" name="sort"></label><br><br>
+                <label>from oldest to latest <input type="radio" name="sort"></label><br><br>
             </div>
-            <form class="news__aside">
-                Email <input type="email">
+            <form class="news__aside__newsletter">
+                Don't want to miss news from the world of movies, TV series or games?<br> Sign up for our newsletter.<br><br>
+                <label for="email">Email</label><input type="email" id = "email"><br><br>
                 <button>Submit</button>
             </form>
         </aside>
+    </div>
         <div class="news">
             <a href="article.html">
                 <article id="news--videogame">
@@ -101,9 +105,20 @@
                 <span id="news__article__release-date"> December 1st, 2024</span>
             </article>
         </div>
-
     </main>
-    </nav>
+    <script>
+        let open = false;
+
+        function openAside(){
+            if (!open){
+                document.querySelector(".news__aside").style.display = "block";
+                open = true;
+            } else {
+                document.querySelector(".news__aside").style.display = "none";
+                open = false;
+            }
+        }
+    </script>
 </body>
 
 </html>
