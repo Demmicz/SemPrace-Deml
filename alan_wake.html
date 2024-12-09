@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Alan Wake</title>
+</head>
+
+<body>
+    <nav class="nav-primary">
+        <ul class="nav-primary__links">
+            <li><a href="index.html">FreeTimeZone.cz</a></li>
+            <li><a href="movies.html">Movies</a></li>
+            <li><a href="shows.html">TV shows</a></li>
+            <li><a href="videogames.html">Videogames</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="login.html" id="ul__login">Login</a></li>
+        </ul>
+        <form id="nav-primary__search">
+            <input type="text">
+            <input type="button" value="search">
+        </form>
+        <a href="login.html" id="login_under_ul">Login</a>
+    </nav>
+    <main class="main--title">
+        <header class="title__header">
+            <span class="title__header__name">Alan Wake</span>
+            <div class="title__header__rating">89 %</div>
+        </header>
+        <div class="title__description">
+            <img src="images/videogames/alan_wake.jpg" alt="Alan Wake">
+            <div class="title__description__btns">
+                <button onclick="openInfo()">Info</button>
+                <button onclick="openAbout()">About</button>
+                <button onclick="openPlatforms()">Platforms</button>
+                <button onclick="openHowlongtobeat()">How long to beat</button>
+            </div>
+            <div class="title__description__info">
+                <span id="title__description--bold">Release date:</span> May 14, 2010<br>
+                <span id="title__description--bold">Developer:</span> Remedy Entertainment<br>
+                <span id="title__description--bold">Publisher:</span> Microsoft Game Studios<br>
+                <span id="title__description--bold">Genre:</span> Action-adventure, Psychological thriller<br><br>
+            </div>
+
+            <p class="title__description__about">Dive into the haunting world of Alan Wake, a psychological thriller where a writer’s words come to life, blurring the lines between reality and fiction. Set in the small town of Bright Falls, the game unravels a gripping narrative filled with suspense, mystery, and shadowy dangers. Alan must unravel the truth behind his wife’s disappearance while battling a dark presence that turns ordinary people into nightmarish foes. Will you brave the darkness and uncover the secrets of Bright Falls?</p>
+
+            <div class="title__description__platforms">
+                <ul>
+                    <li>Xbox 360</li>
+                    <li>Xbox one</li>
+                    <li>Steam</li>
+                    <li>Epic Games</li>
+                </ul>
+            </div>
+            <div class="title__description__howlongtobeat">
+                <class id="title__description--bold">story:</class> 7 h<br>
+                <class id="title__description--bold">100%:</class> 20 h
+            </div>
+        </div>
+
+        <script>
+            const info = document.querySelector(".title__description__info");
+            const about = document.querySelector(".title__description__about");
+            const platforms = document.querySelector(".title__description__platforms");
+            const Howlongtobeat = document.querySelector(".title__description__howlongtobeat");
+            let active = info;
+
+            active.style.display = "block";
+
+            function openAbout() {
+                active.style.display = "none";
+                active = about;
+                active.style.display = "block";
+            }
+            function openInfo() {
+                active.style.display = "none";
+                active = info;
+                active.style.display = "block";
+            }
+            function openPlatforms() {
+                active.style.display = "none";
+                active = platforms;
+                active.style.display = "block";
+            }
+            function openHowlongtobeat(){
+                active.style.display = "none";
+                active = Howlongtobeat;
+                active.style.display = "block";
+            }
+        </script>
+
+        <div class="title__user-comment">
+            <header>
+                username
+                <span><input type="number" min="1" max="10" class="title__user-comment__rating"> / 10 </span>
+            </header>
+            <form>
+                <textarea></textarea>
+                <button type="submit">
+                    Post
+                </button>
+            </form>
+        </div>
+        <header class="title__comments__other-comments">
+            <h2>Other comments</h2>
+        </header>
+        <div class="title__comments">
+            <div class="title__comments__comment">
+                <header>
+                    gamerFan
+                    <span>10 / 10</span>
+                </header>
+                <p>Alan Wake is a masterpiece of storytelling and atmosphere. The suspense and the eerie vibe of Bright Falls kept me on edge throughout the entire game. Highly recommended for fans of psychological thrillers!</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    DarkSeeker
+                    <span>9 / 10</span>
+                </header>
+                <p>Incredible game with a unique story and haunting soundtrack. The only downside is that the combat can feel repetitive at times, but the narrative more than makes up for it.</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    BrightFallsLover
+                    <span>8 / 10</span>
+                </header>
+                <p>The atmosphere is amazing, and the story kept me hooked. I just wish there was more variety in the gameplay mechanics. Still, a fantastic experience!</p>
+            </div>
+            <div class="title__comments__comment">
+                <header>
+                    MysteryHunter
+                    <span>10 / 10</span>
+                </header>
+                <p>Alan Wake is one of the best psychological thrillers out there. The attention to detail in the storytelling and world-building is phenomenal. A must-play!</p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>
