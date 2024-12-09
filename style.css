@@ -79,23 +79,30 @@ body {
     display: inline-block;
 }
 
+#nav-primary__search {
+    margin: 1rem;
+}
+
 #nav-primary__search input {
-    border-radius: 7px;
+    border-radius: 5px;
+    height: 30px;
 }
 
 #nav-primary__search input[type="button"] {
-    background-color: black;
+    background-color: var(--color-element-A);
     color: whitesmoke;
-    padding: 0.5rem 0.5rem;
     font-family: var(--font-A);
 }
 
 #nav-primary__search input[type="button"]:hover {
-    background-color: orange;
-    color: black;
+    background-color: #01050e;
     transition: background 0.1s ease;
     transition: color 0.1s ease;
     cursor: pointer;
+}
+
+#nav-primary__search input[type="text"] {
+    margin-right: 10px;
 }
 
 #nav_primary__search input[type="text"] {
@@ -189,6 +196,7 @@ footer {
 
 }
 .filters {
+    padding: 20px;
     display: none;
     color: white;
     background-color: var(--color-element-A);
@@ -377,7 +385,6 @@ footer {
 }
 .title__user-comment{
     width: calc(90% - 20px);
-    aspect-ratio: 2;
     margin: auto;
     margin-bottom: 20px;
     display: grid;
@@ -405,7 +412,7 @@ footer {
 
 .title__user-comment textarea {
     width: 90%;
-    aspect-ratio: 2;
+    aspect-ratio: 5 / 3;
     margin: 10px;
     padding: 3px;
     resize: none;
@@ -418,7 +425,7 @@ footer {
 .title__user-comment button {
     display: block;
     margin: 5px;
-    padding: 5px 7px;
+    padding: 7px 10px;
     justify-self: end;
     color: white;
     background-color:#082869;
@@ -574,6 +581,12 @@ footer {
 .news__aside__newsletter > label{
     margin-right: 10px;
 }
+.news__aside__newsletter button {
+    cursor: pointer;
+    padding: 3px 7px;
+    background-color: #283e6b;
+    color: white;
+}
 /* article.html */
 .article__author {
     height: 100px;
@@ -629,24 +642,24 @@ footer {
     grid-area: "form" ;
     justify-content: end;
 }
+
 .article__user-comment textarea {
-    color: white;
     width: 90%;
-    aspect-ratio: 2;
+    aspect-ratio: 5 / 3;
     margin: 10px;
     padding: 3px;
     resize: none;
     border: none;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, #03122F -3px -3px 6px 1px inset;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
     border-radius: 2px;
     text-overflow: ellipsis;
     text-align: justify;
-    background-color: #03122F;
+    background-color: var(--color-element-A);
 }
 .article__user-comment button {
     display: block;
     margin: 5px;
-    padding: 5px 7px;
+    padding: 7px 10px;
     justify-self: end;
     color: white;
     background-color:#082869;
@@ -764,7 +777,12 @@ footer {
         width: 40%;
     }
     .title__description img {
+        width: 30%;
+    }
+    .title__user-comment {
         width: 50%;
+    }
+    .title__description > img {
     }
 }
 @media screen and (min-width: 750px) {
