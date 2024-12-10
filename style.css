@@ -169,7 +169,7 @@ footer {
     left: 0;
     cursor: pointer;
 }
-#registration__back:hover{
+#login__back:hover{
     filter: none;
     background-color: white;
     border-radius: 5px;
