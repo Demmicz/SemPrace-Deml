@@ -721,7 +721,7 @@ footer {
     margin: 5px;
     text-align: justify;
 }
-@media screen and (max-width: 371px) {
+@media screen and (max-width: 380px) {
     #ul__login{
         display: block;
     }
