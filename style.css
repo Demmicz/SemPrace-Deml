@@ -782,8 +782,6 @@ footer {
     .title__user-comment {
         width: 50%;
     }
-    .title__description > img {
-    }
 }
 @media screen and (min-width: 750px) {
     /*navbar*/
