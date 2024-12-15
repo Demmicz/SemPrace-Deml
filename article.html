@@ -10,19 +10,22 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class = "nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
+        </div>
     </nav>
     <main class="main--article">
 

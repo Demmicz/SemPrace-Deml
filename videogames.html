@@ -10,52 +10,65 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class="nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
+        </div>
     </nav>
     <div id="btn--filter" onclick="openfilters()"><img src="icons/filter.png"></div>
     <aside class="filters">
-        Filters<br><br>
+        <h2>Filters</h2>
         <form>
-            <label for="min">Min rating </label>
-            <input type="number" min="0" max="100" name="min-rating" id="min"><br><br>
-
-            <label for="max">Max rating </label>
-            <input type="number" min="0" max="100" name="max-rating" id="max"><br><br>
-
-            <label for="year">Year</label><br>
-            <input type="range" min="1980" max="2024" value="2000" id="year"
-                oninput="this.nextElementSibling.value = this.value">
-            <output for="year">2000</output><br><br>
-
-            Platforms<br><br>
-            <label><input type="checkbox" name="Steam"> Steam</label><br>
-            <label><input type="checkbox" name="Epic Games"> Epic Games</label><br>
-            <label><input type="checkbox" name="GOG"> GOG</label><br>
-            <label><input type="checkbox" name="Playstation"> Playstation 5</label><br>
-            <label><input type="checkbox" name="Xbox"> Xbox</label><br>
-            <label><input type="checkbox" name="Nintendo"> Nintendo Switch</label><br><br>
-
-            Genre<br><br>
-            <label><input type="checkbox" name="genre" value="action"> Action</label><br>
-            <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label><br>
-            <label><input type="checkbox" name="genre" value="drama"> Drama</label><br>
-            <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label><br>
-            <label><input type="checkbox" name="genre" value="horror"> Horror</label><br>
-            <label><input type="checkbox" name="genre" value="thriller"> Thriller</label><br>
-            <label><input type="checkbox" name="genre" value="comedy"> Comedy</label><br>
-            <label><input type="checkbox" name="genre" value="romance"> Romance</label><br><br>
+            <div class="filters__form__rating">
+                <h3>Rating</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" id="rangeOne">
+                    <input type="range" min="1980" max="2024" id="rangeTwo">
+                </div>
+            </div>
+            <div class="filters__form__year">
+                <h3>Year</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" value="2000" id="year"
+                        oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output>
+                </div>
+            </div>
+            <div class="filters__form__platforms">
+                <h3>Platforms</h3>
+                <div>
+                    <label><input type="checkbox" name="Steam"> Steam</label>
+                    <label><input type="checkbox" name="Epic Games"> Epic Games</label>
+                    <label><input type="checkbox" name="GOG"> GOG</label>
+                    <label><input type="checkbox" name="Playstation"> Playstation 5</label>
+                    <label><input type="checkbox" name="Xbox"> Xbox</label>
+                    <label><input type="checkbox" name="Nintendo"> Nintendo Switch</label>
+                </div>
+            </div>
+            <div class="filters__form__genre">
+                <h3>Genre</h3>
+                <div>
+                    <label><input type="checkbox" name="genre" value="action"> Action</label>
+                    <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label>
+                    <label><input type="checkbox" name="genre" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label>
+                    <label><input type="checkbox" name="genre" value="horror"> Horror</label>
+                    <label><input type="checkbox" name="genre" value="thriller"> Thriller</label>
+                    <label><input type="checkbox" name="genre" value="comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genre" value="romance"> Romance</label>
+                </div>
+            </div>
         </form>
     </aside>
     <script>
@@ -82,9 +95,9 @@
                 </div>
                 <div class="list__title__description">
                     <div class="list__title__description__name">Alan Wake</div>
-                    Year: 2010<br>
-                    Publisher: Microsoft Game Studios<br>
-                    Developer: Remedy Entertainment
+                    <div class="list__title__description__info"><strong>Year</strong> 2010</div>
+                    <div class="list__title__description__info"><strong>Publisher</strong> Microsoft Game Studios</div>
+                    <div class="list__title__description__info"><strong>Developer</strong> Remedy Entertainment</div>
                 </div>
             </div>
         </a>
@@ -95,9 +108,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Alan Wake 2</div>
-                Year: 2023<br>
-                Publisher: Epic Games<br>
-                Developer: Remedy Entertainment
+                <div class="list__title__description__info"><strong>Year</strong> 2023</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Epic Games</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Remedy Entertainment</div>
             </div>
         </div>
         <div class="list__title">
@@ -107,9 +120,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">BioShock Infinite</div>
-                Year: 2013<br>
-                Publisher: 2K Games<br>
-                Developer: Irrational Games
+                <div class="list__title__description__info"><strong>Year</strong> 2013</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> 2K Games</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Irrational Games</div>
             </div>
         </div>
         <div class="list__title">
@@ -119,9 +132,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Dishonored</div>
-                Year: 2012<br>
-                Publisher: Bethesda Softworks<br>
-                Developer: Arkane Studios
+                <div class="list__title__description__info"><strong>Year</strong> 2012</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Bethesda Softworks</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Arkane Studios</div>
             </div>
         </div>
         <div class="list__title">
@@ -131,9 +144,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Kingdom Come: Deliverance</div>
-                Year: 2018<br>
-                Publisher: Deep Silver<br>
-                Developer: Warhorse Studios
+                <div class="list__title__description__info"><strong>Year</strong> 2018</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Deep Silver</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Warhorse Studios</div>
             </div>
         </div>
         <div class="list__title">
@@ -143,9 +156,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Red Dead Redemption</div>
-                Year: 2010<br>
-                Publisher: Rockstar Games<br>
-                Developer: Rockstar San Diego
+                <div class="list__title__description__info"><strong>Year</strong> 2010</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Rockstar Games</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Rockstar San Diego</div>
             </div>
         </div>
         <div class="list__title">
@@ -155,12 +168,11 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Deus Ex: Mankind Divided</div>
-                Year: 2016<br>
-                Publisher: Square Enix<br>
-                Developer: Eidos-Montréal
+                <div class="list__title__description__info"><strong>Year</strong> 2016</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Square Enix</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Eidos-Montréal</div>
             </div>
         </div>
-        
         <div class="list__title">
             <div class="list__title__picture">
                 <div class="list__title__rating">91%</div>
@@ -168,12 +180,11 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Dishonored 2</div>
-                Year: 2016<br>
-                Publisher: Bethesda Softworks<br>
-                Developer: Arkane Studios
+                <div class="list__title__description__info"><strong>Year</strong> 2016</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Bethesda Softworks</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Arkane Studios</div>
             </div>
         </div>
-        
         <div class="list__title">
             <div class="list__title__picture">
                 <div class="list__title__rating">96%</div>
@@ -181,12 +192,11 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">The Last of Us</div>
-                Year: 2013<br>
-                Publisher: Sony Computer Entertainment<br>
-                Developer: Naughty Dog
+                <div class="list__title__description__info"><strong>Year</strong> 2013</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Sony Computer Entertainment</div>
+                <div class="list__title__description__info"><strong>Developer</strong> Naughty Dog</div>
             </div>
         </div>
-        
         <div class="list__title">
             <div class="list__title__picture">
                 <div class="list__title__rating">94%</div>
@@ -194,14 +204,16 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">The Last of Us Part II</div>
-                Year: 2020<br>
-                Publisher: Sony Interactive Entertainment<br>
-                Developer: Naughty Dog
+                <div class="list__title__description__info"><strong>Year</strong> 2020</div>
+                <div class="list__title__description__info"><strong>Publisher</strong> Sony Interactive Entertainment
+                </div>
+                <div class="list__title__description__info"><strong>Developer</strong> Naughty Dog</div>
             </div>
         </div>
     </div>
+
     <footer>
-        
+
     </footer>
 </body>
 

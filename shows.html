@@ -10,44 +10,63 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class = "nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
+        </div>
     </nav>
     <div id="btn--filter" onclick="openfilters()"><img src="icons/filter.png"></div>
     <aside class="filters">
-        Filters<br><br>
+        <h2>Filters</h2>
         <form>
-            Rating<br><br>
-            Min rating <input type="number" min="0" max="100" name="min-rating" id="min"><br><br>
-            Max rating <input type="number" min="0" max="100" name="max-rating" id="max"><br><br>
-            Year of the first episode<br><br>
-            <input type="range" min="1980" max="2024" value="2000" id="year"
-                oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output><br><br>
-            Platforms<br><br>
-            <input type="checkbox" name="Netflix"> Netflix<br><br>
-            <input type="checkbox" name="MAX"> MAX<br><br>
-            <input type="checkbox" name="Prime video"> Prime video <br><br>
-            <input type="checkbox" name="Disney+"> Disney+ <br><br>
-            Genre<br><br>
-            <label><input type="checkbox" name="genre" value="action"> Action</label><br>
-            <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label><br>
-            <label><input type="checkbox" name="genre" value="drama"> Drama</label><br>
-            <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label><br>
-            <label><input type="checkbox" name="genre" value="horror"> Horror</label><br>
-            <label><input type="checkbox" name="genre" value="thriller"> Thriller</label><br>
-            <label><input type="checkbox" name="genre" value="comedy"> Comedy</label><br>
-            <label><input type="checkbox" name="genre" value="romance"> Romance</label><br><br>
+            <div class="filters__form__rating">
+                <h3>Rating</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" id="rangeOne">
+                    <input type="range" min="1980" max="2024" id="rangeTwo">
+                </div>
+            </div>
+            <div class="filters__form__year">
+                <h3>Year</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" value="2000" id="year"
+                        oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output>
+                </div>
+            </div>
+            <div class="filters__form__platforms">
+                <h3>Platforms</h3>
+                <div>
+                    <label><input type="checkbox" name="Netflix"> Netflix</label>
+                    <label><input type="checkbox" name="MAX"> MAX</label>
+                    <label><input type="checkbox" name="Prime video"> Prime video</label>
+                    <label><input type="checkbox" name="Disney+"> Disney+</label>
+                </div>
+            </div>
+            <div class="filters__form__genre">
+                <h3>Genre</h3>
+                <div>
+                    <label><input type="checkbox" name="genre" value="action"> Action</label>
+                    <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label>
+                    <label><input type="checkbox" name="genre" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label>
+                    <label><input type="checkbox" name="genre" value="horror"> Horror</label>
+                    <label><input type="checkbox" name="genre" value="thriller"> Thriller</label>
+                    <label><input type="checkbox" name="genre" value="comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genre" value="romance"> Romance</label>
+                </div>
+            </div>
         </form>
     </aside>
     <script>
@@ -74,23 +93,24 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Better Call Saul</div>
-                Year: 2015 - 2022<br>
-                Director: Vince Gilligan<br>
-                Actors: Bob Odenkirk...
+                <div class="list__title__description__info"><strong>Year</strong> 2015 - 2022</div>
+                <div class="list__title__description__info"><strong>Director</strong> Vince Gilligan</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Bob Odenkirk...</div>
             </div>
         </div>
-        <a href="breaking_bad.html"><div class="list__title">
-            <div class="list__title__picture">
-                <img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad">
-                <div class="list__title__rating">99%</div>
+        <a href="breaking_bad.html">
+            <div class="list__title">
+                <div class="list__title__picture">
+                    <img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad">
+                    <div class="list__title__rating">99%</div>
+                </div>
+                <div class="list__title__description">
+                    <div class="list__title__description__name">Breaking Bad</div>
+                    <div class="list__title__description__info"><strong>Year</strong> 2008 - 2013</div>
+                    <div class="list__title__description__info"><strong>Director</strong> Vince Gilligan</div>
+                    <div class="list__title__description__info"><strong>Actors</strong> Bryan Cranston...</div>
+                </div>
             </div>
-            <div class="list__title__description">
-                <div class="list__title__description__name">Breaking Bad</div>
-                Year: 2008 - 2013<br>
-                Director: Vince Gilligan<br>
-                Actors: Bryan Cranston...
-            </div>
-        </div>
         </a>
         <div class="list__title">
             <div class="list__title__picture">
@@ -99,9 +119,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">True Detective</div>
-                Year: 2014 - present<br>
-                Director: Cary Joji Fukunaga<br>
-                Actors: Woody Harrelson...
+                <div class="list__title__description__info"><strong>Year</strong> 2014 - present</div>
+                <div class="list__title__description__info"><strong>Director</strong> Cary Joji Fukunaga</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Woody Harrelson...</div>
             </div>
         </div>
         <div class="list__title">
@@ -111,9 +131,9 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">The Walking Dead</div>
-                Year: 2010 - 2022<br>
-                Director:  Frank Darabont<br>
-                Actors: Andrew Lincoln...
+                <div class="list__title__description__info"><strong>Year</strong> 2010 - 2022</div>
+                <div class="list__title__description__info"><strong>Director</strong> Frank Darabont</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Andrew Lincoln...</div>
             </div>
         </div>
         <div class="list__title">
@@ -123,12 +143,11 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">Mr. Robot</div>
-                Year: 2015 - 2019<br>
-                Director: Sam Esmail<br>
-                Actors: Rami Malek...
+                <div class="list__title__description__info"><strong>Year</strong> 2015 - 2019</div>
+                <div class="list__title__description__info"><strong>Director</strong> Sam Esmail</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Rami Malek...</div>
             </div>
         </div>
-        
         <div class="list__title">
             <div class="list__title__picture">
                 <img src="images/tv shows/the_last_of_us.jpg" alt="The Last of Us">
@@ -136,12 +155,13 @@
             </div>
             <div class="list__title__description">
                 <div class="list__title__description__name">The Last of Us</div>
-                Year: 2023 - present<br>
-                Director: Craig Mazin...<br>
-                Actors: Pedro Pascal...
+                <div class="list__title__description__info"><strong>Year</strong> 2023 - present</div>
+                <div class="list__title__description__info"><strong>Director</strong> Craig Mazin...</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Pedro Pascal...</div>
             </div>
         </div>
     </div>
+    
     <footer>
         
     </footer>

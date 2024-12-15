@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link rel="stylesheet" href="style.css">-->
     <style>
         @font-face {
             font-family: Roboto;
@@ -18,13 +17,15 @@
 
         :ROOT {
             --color-background-A: #19305C;
-            --color-element-A: #03122F;
+            --color-element-A: #F3A712;
             --font-A: "Roboto";
             --font-B: "Roboto-medium";
             --font-background-articles: #03122F;
+            --color-background-B: #2E3138;
         }
 
         body {
+            overflow-x: hidden;
             margin: 0;
             padding: 0;
             font-family: var(--font-A);
@@ -32,21 +33,24 @@
         }
 
         .nav-primary {
-            background-color: var(--color-element-A);
-            border: black 1px solid;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-            overflow: hidden;
+            font-family: roboto;
+            height: fit-content;
+            border: 1px solid black;
+            background-color: var(--color-background-B);
         }
-
-        .nav-primary__links {
+        .nav-primary__navbar{
+            display: grid;
+            grid-template-columns: 1fr;
+            height: 100%;
+            align-items: center;
+        }
+        .nav-primary__links{
             list-style-type: none;
             margin: 0;
             padding: 0;
-            border-bottom: white solid 1px;
+            list-style: none;
         }
-
-        .nav-primary a,
-        #ul__login {
+        .nav-primary__links a {
             display: block;
             color: white;
             text-decoration: none;
@@ -56,67 +60,89 @@
             padding-bottom: auto;
             font-size: 1rem;
         }
-
-        #ul__login {
-            display: none;
-        }
-
-        .nav-primary a:hover {
-            color: black;
-            background-color: white;
-            transition: color 0.1s ease-in;
-            transition: background 0.1s ease;
+        #login{
+            color: white;
+            text-decoration: none;
+            margin: 5px;
+            padding: 10px;
+            padding-left: 15px;
+            padding-right: 15px;
             border-radius: 5px;
         }
-
-        .nav-primary__underUL{
-            width: 100%;
+        .nav-primary__form_login {
+            margin: 15px;
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            align-content: center;
         }
-        #login_under_ul {
-            margin-top: auto;
-            margin-bottom: auto;
-        }
-
-        #nav-primary__search {
-            margin: 1rem;
-        }
-
-        #nav-primary__search input {
-            border-radius: 5px;
-            height: 30px;
-        }
-
-        #nav-primary__search input[type="button"] {
-            background-color: var(--color-element-A);
-            color: whitesmoke;
-            font-family: var(--font-A);
-        }
-
-        #nav-primary__search input[type="button"]:hover {
-            background-color: #01050e;
-            transition: background 0.1s ease;
-            transition: color 0.1s ease;
-            cursor: pointer;
-        }
-
-        #nav-primary__search input[type="text"] {
+        .nav-primary__form_login form{
+            width: 150px;
+            display: flex;
+            background-color: white;
+            border-radius: 10px;
             margin-right: 10px;
         }
+        .nav-primary__form_login form input {
+            width: 80%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            background-color: white;
+        }
+        .nav-primary__form_login form button {
+            padding: 10px;
+            border-radius: 4px 10px 10px 4px ;
+            border: none;
+            background-color: white;
+        }
+        .nav-primary__form_login form button:hover{
+            background-color: silver;
+            cursor: pointer;
+            outline: 3px solid black;
+        }
+        .nav-primary__form_login form button img {
+            width: 15px;
+        }
+        .nav-primary__form_login form input:focus{
+            outline: none;
+        }
+        .nav-primary__form_login form:hover, .nav-primary__form_login form:focus-within{
+            outline: 3px solid black;
+        }
+        .nav-primary__links a:hover {
+            background-color: white;
+            color: black;
+        }
+        #login{
+            background-color: orange;
+        }
+        #login:hover{
+            background-color: rgb(255, 180, 42);
+            outline: 3px solid black;
+            transform: scale(1.05);
+        }
 
-        .top-picks>div {
+
+        .top-picks{
+            margin-bottom: 10vh;
+        }
+        .top-picks>span {
             display: flex;
             align-items: center;
             background-color: var(--color-element-A);
             box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-
+            outline: 3px solid black;
         }
 
         .top-picks header {
-            color: white;
             font: var(--font-B);
+            font-size: 1rem;
+            text-align: left;
+            color: white;
+        }
+        .top-picks__header__first-word{
+            font-size: 2rem;
+            font-weight: 600;
         }
 
         .top-picks__titles {
@@ -132,7 +158,7 @@
 
         .top-picks__titles img {
             cursor: pointer;
-            height: 35vh;
+            height: 300px;
             margin-top: 20px;
             margin-bottom: 20px;
             margin-left: 15px;
@@ -154,9 +180,10 @@
         .left,
         .right {
             cursor: pointer;
-            padding: 0.5rem;
+            padding: 7px;
             border-radius: 4px;
-            margin: 10px;
+            margin: 5px;
+            outline: 3px solid black;
 
         }
 
@@ -164,15 +191,15 @@
         .right:hover {
             background-color: white;
             transition: background 0.1s ease;
+            transform: scale(1.05);
 
         }
-
         .news {
             margin: 20px;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: 1fr;
+            justify-items: center;
+
 
         }
 
@@ -231,39 +258,43 @@
             color: white;
         }
 
-        @media screen and (max-width: 371px) {
-            #ul__login {
-                display: block;
+        @media screen and (min-width: 359px) {
+            .nav-primary__form_login form input{
+                width: none;
             }
-
-            #login_under_ul {
-                display: none;
+            .nav-primary__form_login form{
+                width: fit-content;
             }
-            .left, .right {
-
-                margin: 2px;
+            .nav-primary__form_login{
+                justify-content: center;
             }
         }
-
-        @media screen and (min-width: 617px) {
-            .nav-primary__links {
+        @media screen and (min-width: 603px) {
+            .nav-primary__links{
                 display: flex;
-                flex-wrap: nowrap;
                 justify-content: space-evenly;
-
+                align-content: center;
             }
-
-            .nav-primary__links li {
-                margin-top: 15px;
-                margin-bottom: 15px;
+            .nav-primary__links a {
+                color: white;
+                text-decoration: none;
+                margin: 5px;
+                padding: 15px;
+                padding-left: 20px;
+                padding-right: 20px;
+                border-radius: 5px;
             }
+            
         }
-
-        /* LAPTOP */
-
-        @media screen and (min-width: 750px) {
-            .nav-primary__links {
-                justify-content: flex-start;
+        @media screen and (min-width: 800px) {
+            .nav-primary__navbar{
+                grid-template-columns: 75% 25%;
+            }
+            .nav-primary__links{
+                justify-content: left;
+            }
+            .news{
+                grid-template-columns: repeat(3, 1fr);
             }
         }
     </style>
@@ -272,25 +303,26 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <div class="nav-primary__underUL">
-            <form id="nav-primary__search">
-                <input type="text">
-                <input type="button" value="search">
-            </form>
-            <a href="login.html" id="login_under_ul">Login</a>
+        <div class = "nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
         </div>
     </nav>
     <div class="top-picks top-picks--movies">
-        <header>Movies - Top picks for you</header>
-        <div>
+        <header><span class="top-picks__header__first-word">Movies</span> - Top picks for you</header>
+        <span>
             <span class="left top-pics--movies__left"><img src="icons/left-arrow.png"></span>
             <span class="top-picks__titles top-picks__titles--movies">
                 <img src="images/movies/django_unchained.jpg" alt="django_unchained">
@@ -310,45 +342,13 @@
             </span>
             <span class="right top-pics--movies__right"><img src="icons/right-arrow.png"></span>
             <script>
-                let titles_movies = document.querySelector(".top-picks__titles--movies");
-                let images_movies = Array.from(titles_movies.querySelectorAll("img"));
-
-                console.log(titles_movies);
-
-                let index_movies = 0;
-                document.querySelector(".top-pics--movies__right").addEventListener("click", () => {
-                    let clone = images_movies[index_movies].cloneNode(true);
-                    titles_movies.appendChild(clone);
-                    const image_width = images_movies[index_movies].clientWidth + 30;
-                    titles_movies.scrollLeft += image_width;
-
-                    if ((index_movies + 1) == images_movies.length) {
-                        index_movies = 0;
-                    } else {
-                        index_movies++;
-                    }
-                });
-                document.querySelector(".top-pics--movies__left").addEventListener("click", () => {
-                    if (titles_movies.scrollLeft != 0) {
-                        const image_width = images_movies[index_movies - 1].clientWidth + 30;
-                        titles_movies.scrollLeft -= image_width;
-
-
-                        if (index_movies == 0) {
-                            index_movies = images_movies.length - 1;
-                        } else {
-                            index_movies--;
-                        }
-                    }
-                    console.log(index_movies);
-                });
-
+               
             </script>
-        </div>
+        </span>
     </div>
     <div class="top-picks top-picks--TVshows">
-        <header>Tv shows - Top picks for you</header>
-        <div>
+        <header><span class="top-picks__header__first-word">Tv shows </span> - Top picks for you</header>
+        <span>
             <span class="left top-picks--TVshows__left"><img src="icons/left-arrow.png"></span>
             <span class="top-picks__titles top-picks__titles--TVshows">
                 <span><img src="images/tv shows/breaking_bad.jpg" alt="Breaking Bad"></span>
@@ -360,43 +360,14 @@
                 <span><img src="images/tv shows/the_last_of_us.jpg" alt="The Last of Us"></span>
             </span>
             <span class="right top-picks--TVshows__right"><img src="icons/right-arrow.png"></span>
-        </div>
+        </span>
     </div>
     <script>
-        let titles_shows = document.querySelector(".top-picks__titles--TVshows");
-        let images_shows = Array.from(titles_shows.querySelectorAll("img"));
-
-        let index_shows = 0;
-        document.querySelector(".top-picks--TVshows__right").addEventListener("click", () => {
-            let clone = images_shows[index_shows].cloneNode(true);
-            titles_shows.appendChild(clone);
-            const image_width = images_shows[index_shows].clientWidth + 30;
-            titles_shows.scrollLeft += image_width;
-
-            if ((index_shows + 1) == images_shows.length) {
-                index_shows = 0;
-            } else {
-                index_shows++;
-            }
-        });
-        document.querySelector(".top-picks--TVshows__left").addEventListener("click", () => {
-            if (titles_shows.scrollLeft != 0) {
-                const image_width = images_shows[index_shows - 1].clientWidth + 30;
-                titles_shows.scrollLeft -= image_width;
-
-
-                if (index_shows == 0) {
-                    index_shows = images_shows.length - 1;
-                } else {
-                    index_shows--;
-                }
-            }
-        });
 
     </script>
     <div class="top-picks top-picks--videogames">
-        <header>Videogames - Top picks for you</header>
-        <div>
+        <header><span class="top-picks__header__first-word">Videogames</span>- Top picks for you</header>
+        <span>
             <img src="icons/left-arrow.png" class="left top-picks--videogames__left">
             <div class="top-picks__titles top-picks__titles--videogames">
                 <span><img src="images/videogames/alan_wake.jpg" alt="Alan Wake"></span>
@@ -409,74 +380,8 @@
                 <span><img src="images/videogames/the_last_of_us_part2.jpg" alt="The Last of Us Part II"></span>
             </div>
             <img src="icons/right-arrow.png" class="right top-picks--videogames__right">
-        </div>
+        </span>
     </div>
-    <script>
-        let titles_videogames = document.querySelector(".top-picks__titles--videogames");
-        let images_videogames = Array.from(titles_videogames.querySelectorAll("img"));
-
-        let index_videogames = 0;
-        document.querySelector(".top-picks--videogames__right").addEventListener("click", () => {
-            let clone = images_videogames[index_videogames].cloneNode(true);
-            titles_videogames.appendChild(clone);
-            const image_width = images_videogames[index_videogames].clientWidth + 30;
-            titles_videogames.scrollLeft += image_width;
-
-            if ((index_videogames + 1) == images_videogames.length) {
-                index_videogames = 0;
-            } else {
-                index_videogames++;
-            }
-        });
-        document.querySelector(".top-picks--videogames__left").addEventListener("click", () => {
-            if (titles_videogames.scrollLeft != 0) {
-                const image_width = images_videogames[index_videogames - 1].clientWidth + 30;
-                titles_videogames.scrollLeft -= image_width;
-
-
-                if (index_videogames == 0) {
-                    index_videogames = images_videogames.length - 1;
-                } else {
-                    index_videogames--;
-                }
-            }
-        });
-
-    </script>
-
-    <script>
-
-        const images = Array.from(scroll.querySelectorAll("img"));
-
-        var velikost_obrazku = 0;
-        images.forEach(element => {
-            velikost_obrazku += element.clientWidth + 8;
-        });
-        console.log("velikost = " + velikost_obrazku);
-
-        let index = 0;
-
-
-
-        LEFT.addEventListener("click", () => {
-            if (index > 0) {
-                const nextImageWidth = images[index].clientWidth + 8;
-                scroll.style.scrollBehavior = "smooth";
-                scroll.scrollLeft -= nextImageWidth;
-                index--;
-            }
-        });
-        RIGHT.addEventListener("click", () => {
-            if (index < images.length - 1) {
-                const nextImageWidth = images[index].clientWidth + 8;
-                scroll.style.scrollBehavior = "smooth";
-                scroll.scrollLeft += nextImageWidth;
-                index++;
-                console.log(scroll.scrollLeft);
-            }
-        });
-
-    </script>
     <div class="news">
         <a href="article.html">
             <article id="news--videogame">
@@ -523,6 +428,6 @@
     <footer>
         
     </footer>
+    <script src="top_picks.js"></script>
 </body>
-
 </html>

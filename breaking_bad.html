@@ -10,19 +10,22 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class = "nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
+        </div>
     </nav>
     <main class="main--title">
         <header class="title__header">
@@ -38,10 +41,10 @@
                 <button onclick="openEpisodes()">Episodes</button>
             </div>
             <div class="title__description__info">
-                <span id="title__description--bold">First episode:</span> January 20, 2008<br>
-                <span id="title__description--bold">Last episode:</span> September 29, 2013<br>
-                <span id="title__description--bold">Created by:</span> Vince Gilligan<br>
-                <span id="title__description--bold">Cast:</span> Bryan Cranston, Aaron Paul, Anna Gunn, Dean Norris, Betsy Brandt, RJ Mitte, Bob Odenkirk, Giancarlo Esposito<br><br>
+                <span id="title__description--bold">First episode</span> January 20, 2008<br>
+                <span id="title__description--bold">Last episode</span> September 29, 2013<br>
+                <span id="title__description--bold">Created by</span> Vince Gilligan<br>
+                <span id="title__description--bold">Cast</span> Bryan Cranston, Aaron Paul, Anna Gunn, Dean Norris, Betsy Brandt, RJ Mitte, Bob Odenkirk, Giancarlo Esposito<br><br>
             </div>
 
             <p class="title__description__about">Breaking Bad tells the story of Walter White, a high school chemistry teacher turned methamphetamine manufacturer. Facing a terminal cancer diagnosis, he partners with former student Jesse Pinkman to secure his family's financial future, but their descent into the criminal underworld has devastating consequences.</p>

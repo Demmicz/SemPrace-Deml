@@ -10,44 +10,63 @@
 
 <body>
     <nav class="nav-primary">
-        <ul class="nav-primary__links">
-            <li><a href="index.html">FreeTimeZone.cz</a></li>
-            <li><a href="movies.html">Movies</a></li>
-            <li><a href="shows.html">TV shows</a></li>
-            <li><a href="videogames.html">Videogames</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="login.html" id="ul__login">Login</a></li>
-        </ul>
-        <form id="nav-primary__search">
-            <input type="text">
-            <input type="button" value="search">
-        </form>
-        <a href="login.html" id="login_under_ul">Login</a>
+        <div class="nav-primary__navbar">
+            <ul class="nav-primary__links">
+                <li><a href="index.html">FreeTimeZone.cz</a></li>
+                <li><a href="movies.html">Movies</a></li>
+                <li><a href="shows.html">TV shows</a></li>
+                <li><a href="videogames.html">Videogames</a></li>
+                <li><a href="news.html">News</a></li>
+            </ul>
+            <div class="nav-primary__form_login">
+                <form id="nav-primary__search">
+                    <input type="text" placeholder="search...">
+                    <button><img src="icons/search.png"></button>
+                </form>
+                <a href="login.html" id="login">Login</a>
+            </div>
+        </div>
     </nav>
     <div id="btn--filter" onclick="openfilters()"><img src="icons/filter.png"></div>
     <aside class="filters">
-        Filters<br><br>
+        <h2>Filters</h2>
         <form>
-            Rating<br><br>
-            Min rating <input type="number" min="0" max="100" name="min-rating" id="min"><br><br>
-            Max rating <input type="number" min="0" max="100" name="max-rating" id="max"><br><br>
-            Year<br><br>
-            <input type="range" min="1980" max="2024" value="2000" id="year"
-                oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output><br><br>
-            Platforms<br><br>
-            <input type="checkbox" name="Netflix"> Netflix<br><br>
-            <input type="checkbox" name="MAX"> MAX<br><br>
-            <input type="checkbox" name="Prime video"> Prime video <br><br>
-            <input type="checkbox" name="Disney+"> Disney+ <br><br>
-            Genre<br><br>
-            <label><input type="checkbox" name="genre" value="action"> Action</label><br>
-            <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label><br>
-            <label><input type="checkbox" name="genre" value="drama"> Drama</label><br>
-            <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label><br>
-            <label><input type="checkbox" name="genre" value="horror"> Horror</label><br>
-            <label><input type="checkbox" name="genre" value="thriller"> Thriller</label><br>
-            <label><input type="checkbox" name="genre" value="comedy"> Comedy</label><br>
-            <label><input type="checkbox" name="genre" value="romance"> Romance</label><br><br>
+            <div class="filters__form__rating">
+                <h3>Rating</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" id="rangeOne">
+                    <input type="range" min="1980" max="2024" id="rangeTwo">
+                </div>
+            </div>
+            <div class="filters__form__year">
+                <h3>Year</h3>
+                <div class="doubleRange">
+                    <input type="range" min="1980" max="2024" value="2000" id="year"
+                        oninput="this.nextElementSibling.value = this.value"> <output for="year">2000</output>
+                </div>
+            </div>
+            <div class="filters__form__platforms">
+                <h3>Platforms</h3>
+                <div>
+                    <label><input type="checkbox" name="Netflix"> Netflix</label>
+                    <label><input type="checkbox" name="MAX"> MAX</label>
+                    <label><input type="checkbox" name="Prime video"> Prime video</label>
+                    <label><input type="checkbox" name="Disney+"> Disney+</label>
+                </div>
+            </div>
+            <div class="filters__form__genre">
+                <h3>Genre</h3>
+                <div>
+                    <label><input type="checkbox" name="genre" value="action"> Action</label>
+                    <label><input type="checkbox" name="genre" value="fantasy"> Fantasy</label>
+                    <label><input type="checkbox" name="genre" value="drama"> Drama</label>
+                    <label><input type="checkbox" name="genre" value="sci-fi"> Sci-Fi</label>
+                    <label><input type="checkbox" name="genre" value="horror"> Horror</label>
+                    <label><input type="checkbox" name="genre" value="thriller"> Thriller</label>
+                    <label><input type="checkbox" name="genre" value="comedy"> Comedy</label>
+                    <label><input type="checkbox" name="genre" value="romance"> Romance</label>
+                </div>
+            </div>
         </form>
     </aside>
     <script>
@@ -67,110 +86,113 @@
 
     </script>
     <div class="list">
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">76%</div>
-                    <img src="images/movies/django_unchained.jpg" alt="Django Unchained">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">Django Unchained</div>
-                    Year: 2012<br>
-                    Director: Quentin Tarantino<br>
-                    Actors: Jamie Foxx...
-                </div>
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">76%</div>
+                <img src="images/movies/django_unchained.jpg" alt="Django Unchained">
             </div>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">90%</div>
-                    <img src="images/movies/interstellar.webp" alt="Interstellar">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">Interstellar</div>
-                    Year: 2014<br>
-                    Director: Christopher Nolan<br>
-                    Actors: Anne Hathaway...
-                </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">Django Unchained</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2012</div>
+                <div class="list__title__description__info"><strong>Director</strong> Quentin Tarantino</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Jamie Foxx Jamie Foxx Jamie Foxx Jamie Foxx Jamie Foxx</div>
             </div>
-
-        <a href="john_wick.html"><div class="list__title">
+        </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">90%</div>
+                <img src="images/movies/interstellar.webp" alt="Interstellar">
+            </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">Interstellar</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2014</div>
+                <div class="list__title__description__info"><strong>Director</strong> Christopher Nolan</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Anne Hathaway...</div>
+            </div>
+        </div>
+    
+        <a href="john_wick.html">
+            <div class="list__title">
                 <div class="list__title__picture">
                     <div class="list__title__rating">99%</div>
                     <img src="images/movies/john_wick.jpg" alt="John Wick">
                 </div>
                 <div class="list__title__description">
                     <div class="list__title__description__name">John Wick</div>
-                    Year: 2014<br>
-                    Director: Chad Stahelski<br>
-                    Actors: Keanu Reeves...
+                    <div class="list__title__description__info"><strong>Year</strong> 2014</div>
+                    <div class="list__title__description__info"><strong>Director</strong> Chad Stahelski</div>
+                    <div class="list__title__description__info"><strong>Actors</strong> Keanu Reeves...</div>
                 </div>
             </div>
         </a>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">84%</div>
-                    <img src="images/movies/oppenheimer.jpg" alt="Oppenheimer">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">Oppenheimer</div>
-                    Year: 2023<br>
-                    Director: Christopher Nolan<br>
-                    Actors: Cillian Murphy...
-                </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">84%</div>
+                <img src="images/movies/oppenheimer.jpg" alt="Oppenheimer">
             </div>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">82%</div>
-                    <img src="images/movies/el_camino.jpg" alt="El Camino">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">El Camino</div>
-                    Year: 2019<br>
-                    Director: Vince Gilligan<br>
-                    Actors: Aaron Paul
-                </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">Oppenheimer</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2023</div>
+                <div class="list__title__description__info"><strong>Director</strong> Christopher Nolan</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Cillian Murphy...</div>
             </div>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">85%</div>
-                    <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">John Wick 2</div>
-                    Year: 2017<br>
-                    Director: Chad Stahelski<br>
-                    Actors: Keanu Reeves
-                </div>
+        </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">82%</div>
+                <img src="images/movies/el_camino.jpg" alt="El Camino">
             </div>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">89%</div>
-                    <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">John Wick 3</div>
-                    Year: 2019<br>
-                    Director: Chad Stahelski<br>
-                    Actors: Keanu Reeves
-                </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">El Camino</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2019</div>
+                <div class="list__title__description__info"><strong>Director</strong> Vince Gilligan</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Aaron Paul</div>
             </div>
-
-            <div class="list__title">
-                <div class="list__title__picture">
-                    <div class="list__title__rating">92%</div>
-                    <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
-                </div>
-                <div class="list__title__description">
-                    <div class="list__title__description__name">John Wick 4</div>
-                    Year: 2023<br>
-                    Director: Chad Stahelski<br>
-                    Actors: Keanu Reeves
-                </div>
+        </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">85%</div>
+                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
             </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">John Wick 2</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2017</div>
+                <div class="list__title__description__info"><strong>Director</strong> Chad Stahelski</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Keanu Reeves</div>
+            </div>
+        </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">89%</div>
+                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
+            </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">John Wick 3</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2019</div>
+                <div class="list__title__description__info"><strong>Director</strong> Chad Stahelski</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Keanu Reeves</div>
+            </div>
+        </div>
+    
+        <div class="list__title">
+            <div class="list__title__picture">
+                <div class="list__title__rating">92%</div>
+                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
+            </div>
+            <div class="list__title__description">
+                <div class="list__title__description__name">John Wick 4</div>
+                <div class="list__title__description__info"><strong>Year</strong> 2023</div>
+                <div class="list__title__description__info"><strong>Director</strong> Chad Stahelski</div>
+                <div class="list__title__description__info"><strong>Actors</strong> Keanu Reeves</div>
+            </div>
+        </div>
+    </div>
+    
 
     </div>
     <footer>

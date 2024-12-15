@@ -7,8 +7,10 @@
     <title>Registration</title>
 </head>
 <body>
-    <div class = "login">
-        <img src="icons/previous.png" onclick = "location.href = 'login.html'" id="login__back">
+    <main class="main--registration">
+    <div class = "registration">
+        <header><h1>Registration</h1></header>
+      <!--  <img src="icons/previous.png" onclick = "location.href = 'login.html'" id="login__back">-->
         <form id = "registration">
             <label for="first_name">First Name</label><input type = "text" name = "First_name" id = "first_name">
             <label for="last_name">Last Name</label><input type="text" name = "Last_Name" id="last_name">
@@ -16,8 +18,10 @@
             <label for="username">Username</label><input type="text" name = "username" id="username">
             <label for="password">Password</label><input type = "password" name = "password" id="password">
             <label for="Confirm_password">Confirm password</label><input type = "password" name = "Confirm_password" id="Confirm_password">
-            <button type= "button" onclick = "location.href = 'index.html'" name = "registration">Register</button>
+            <button type= "button" onclick = "loginControl()" name = "registration">Register</button>
         </form>
     </div>
+</main>
+<script src="login.js"></script>
 </body>
 </html>

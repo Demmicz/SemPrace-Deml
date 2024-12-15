@@ -1,20 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Login</title>
 </head>
+
 <body>
-    <div class = "login">
-        <img src="icons/previous.png" onclick = "location.href = 'index.html'" id="login__back">
-        <form>
-            <label for = "username">Username</label> <input type = "text" name = "username" id = "username" required>
-            <label for="password">password</label> <input type = "password" name = "password" id = "password" required>
-            <button type= "button" onclick = "location.href = 'index.html'" name = "login">Login</button>
-        </form>
-        Haven´t an acount? <a href = "registration.html">Sign in</a><br>
-    </div>
+    <main class="main--login">
+        <div class="login">
+            <a href = "index.html" class="login__back"><img src="icons/close.png"></a>
+            <header><h1>Login</h1></header>
+            <form method="get">
+                <label for="username">Username</label> <input type="text" name="username" id="username"  required>
+                <label for="password">password</label> <input type="password" name="password" id="password" required>
+                <button type="button" onclick="loginControl()" name="login">Login</button>
+            </form>
+            Haven´t an acount? <a href="registration.html">Sign in</a><br>
+        </div>
+    </main>
+    <script src="login.js"></script>
 </body>
+
 </html>
