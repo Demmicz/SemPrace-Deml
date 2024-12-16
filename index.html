@@ -149,6 +149,7 @@
         .top-picks__header__first-word{
             font-size: 2rem;
             font-weight: 600;
+            color: var(--color-element-A);
         }
 
         .top-picks__titles {
@@ -164,7 +165,7 @@
 
         .top-picks__titles img {
             cursor: pointer;
-            height: 250px;
+            height: 300px;
             margin-top: 20px;
             margin-bottom: 20px;
             margin-left: 15px;
@@ -183,12 +184,18 @@
             font-size: 1.5rem;
         }
 
+        .left{
+            left: 0;
+        }
+        .right{
+            right: 0;
+        }
         .left,
         .right {
+            position: absolute;
             cursor: pointer;
-            padding: 7px;
             border-radius: 4px;
-            margin: 5px;
+            padding: 7px;
         }
 
         .left:hover,
@@ -273,6 +280,9 @@
             .nav-primary__form_login{
                 justify-content: center;
             }
+            .left, .right {
+                position:relative;
+            }
         }
         @media screen and (min-width: 603px) {
             .nav-primary__links{
@@ -326,17 +336,10 @@
         </div>
     </nav>
     <div class="top-picks top-picks--movies">
-        <header><span class="top-picks__header__first-word">Movies</span> - Top picks for you</header>
+        <header><span class="top-picks__header__first-word">Movies </span><br>Top picks for you</header>
         <span>
             <span class="left top-pics--movies__left"><img src="icons/left-arrow.png"></span>
             <span class="top-picks__titles top-picks__titles--movies">
-                <img src="images/movies/django_unchained.jpg" alt="django_unchained">
-                <img src="images/movies/el_camino.jpg" alt="el camino">
-                <img src="images/movies/interstellar.webp" alt="interstellar">
-                <img src="images/movies/john_wick.jpg" alt="John Wick">
-                <img src="images/movies/john_wick_2.jpg" alt="John Wick 2">
-                <img src="images/movies/john_wick_3.jpg" alt="John Wick 3">
-                <img src="images/movies/john_wick_4.jpg" alt="John Wick 4">
                 <img src="images/movies/django_unchained.jpg" alt="django_unchained">
                 <img src="images/movies/el_camino.jpg" alt="el camino">
                 <img src="images/movies/interstellar.webp" alt="interstellar">
@@ -352,7 +355,7 @@
         </span>
     </div>
     <div class="top-picks top-picks--TVshows">
-        <header><span class="top-picks__header__first-word">Tv shows </span> - Top picks for you</header>
+        <header><span class="top-picks__header__first-word">Tv shows </span><br>Top picks for you</header>
         <span>
             <span class="left top-picks--TVshows__left"><img src="icons/left-arrow.png"></span>
             <span class="top-picks__titles top-picks__titles--TVshows">
@@ -371,7 +374,7 @@
 
     </script>
     <div class="top-picks top-picks--videogames">
-        <header><span class="top-picks__header__first-word">Videogames</span>- Top picks for you</header>
+        <header><span class="top-picks__header__first-word">Videogames </span><br>Top picks for you</header>
         <span>
             <img src="icons/left-arrow.png" class="left top-picks--videogames__left">
             <div class="top-picks__titles top-picks__titles--videogames">
@@ -428,6 +431,13 @@
                 explore the rise and fall of a new criminal mastermind, with guest appearances from fan favorites!
             </section>
             <span id="news__article__release-date"> December 4th, 2024</span>
+        </article>
+        <article id="news--movie">
+            <header>Avatar 3: Journey to the Ashen Clans</header>
+            <section>James Cameron promises a darker chapter in *Avatar 3*, introducing the Ashen Clans, a
+                mysterious tribe living near Pandora’s volcanic regions. The visual effects are said to surpass
+                anything seen before.</section>
+            <span id="news__article__release-date"> December 2nd, 2024</span>
         </article>
     </div>
     <footer>

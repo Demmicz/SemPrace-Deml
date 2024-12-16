@@ -1,7 +1,17 @@
 let titles_shows = document.querySelector(".top-picks__titles--TVshows");
 let images_shows = Array.from(titles_shows.querySelectorAll("img"));
-
 let index_shows = 0;
+
+let titles_movies = document.querySelector(".top-picks__titles--movies");
+let images_movies = Array.from(titles_movies.querySelectorAll("img"));
+let index_movies = 0;
+
+let titles_videogames = document.querySelector(".top-picks__titles--videogames");
+let images_videogames = Array.from(titles_videogames.querySelectorAll("img"));
+let index_videogames = 0;
+
+
+
 document.querySelector(".top-picks--TVshows__right").addEventListener("click", () => {
     let clone = images_shows[index_shows].cloneNode(true);
     titles_shows.appendChild(clone);
@@ -28,12 +38,11 @@ document.querySelector(".top-picks--TVshows__left").addEventListener("click", ()
     }
 });
 
-let titles_movies = document.querySelector(".top-picks__titles--movies");
-let images_movies = Array.from(titles_movies.querySelectorAll("img"));
+
 
 console.log(titles_movies);
 
-let index_movies = 0;
+
 document.querySelector(".top-pics--movies__right").addEventListener("click", () => {
     let clone = images_movies[index_movies].cloneNode(true);
     titles_movies.appendChild(clone);
@@ -61,10 +70,7 @@ document.querySelector(".top-pics--movies__left").addEventListener("click", () =
     console.log(index_movies);
 });
 
-let titles_videogames = document.querySelector(".top-picks__titles--videogames");
-let images_videogames = Array.from(titles_videogames.querySelectorAll("img"));
 
-let index_videogames = 0;
 document.querySelector(".top-picks--videogames__right").addEventListener("click", () => {
     let clone = images_videogames[index_videogames].cloneNode(true);
     titles_videogames.appendChild(clone);
