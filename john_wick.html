@@ -10,7 +10,7 @@
 
 <body>
     <nav class="nav-primary">
-        <div class = "nav-primary__navbar">
+        <div class="nav-primary__navbar">
             <ul class="nav-primary__links">
                 <li><a href="index.html">FreeTimeZone.cz</a></li>
                 <li><a href="movies.html">Movies</a></li>
@@ -39,19 +39,21 @@
                 <button onclick="openAbout()">About</button>
                 <button onclick="openPlatforms()">Platforms</button>
             </div>
-            <div class = "title__description__info">
-            <span id = "title__description__info--bold">release date:</span> October 23 2014<br>
-            <span id = "title__description__info--bold">Directed by:</span> Chad Stahelski, David Leitch<br>
-            <span id = "title__description__info--bold">Written By:</span> Derek Kolstad<br>
-            <span id = "title__description__info--bold">Cast:</span> Keanu Reeves, Keanu Reeves, Michael Nyqvist, Alfie Allen, Adrianne Palicki, Bridget Moynahan, Dean
-            Winters, Lance Reddick, Toby Leonard Moore, Ian McShane, John Leguizamo<br><br>
+            <div class="title__description__info">
+                <span id="title__description--bold">release date</span> October 23 2014<br>
+                <span id="title__description--bold">Directed by</span> Chad Stahelski, David Leitch<br>
+                <span id="title__description--bold">Written By</span> Derek Kolstad<br>
+                <span id="title__description--bold">Cast</span> Keanu Reeves, Keanu Reeves, Michael Nyqvist, Alfie
+                Allen, Adrianne Palicki, Bridget Moynahan, Dean
+                Winters, Lance Reddick, Toby Leonard Moore, Ian McShane, John Leguizamo<br><br>
             </div>
 
-            <p class="title__description__about">They say, "Revenge is a dish best served cold." John Wick, a retired hitman with a dark past, is the last
+            <p class="title__description__about">They say, "Revenge is a dish best served cold." John Wick, a retired
+                hitman with a dark past, is the last
                 person you'd want to provoke. But one reckless act unleashes a storm of vengeance that shakes the
                 criminal underworld to its core. As Wick takes justice into his own hands, both old allies and enemies
                 are forced to reckon with the legend they thought they'd never face again.</p>
-        
+
             <div class="title__description__platforms">
                 <ul>
                     <li>Netflix</li>
@@ -59,7 +61,7 @@
                 </ul>
             </div>
         </div>
-       
+
         <script>
             const info = document.querySelector(".title__description__info");
             const about = document.querySelector(".title__description__about");
@@ -69,19 +71,19 @@
 
             active.style.display = "block";
 
-            
 
-            function openAbout(){
+
+            function openAbout() {
                 active.style.display = "none";
                 active = about;
                 active.style.display = "block";
             }
-            function openInfo(){
+            function openInfo() {
                 active.style.display = "none";
                 active = info;
                 active.style.display = "block";
             }
-            function openPlatforms(){
+            function openPlatforms() {
                 active.style.display = "none";
                 active = platforms;
                 active.style.display = "block";
@@ -90,90 +92,167 @@
 
 
         </script>
-        <div class="title__user-comment">
-
-            <header>
-                username
-                <span><input type="number" min="1" max="10" class="title__user-comment__rating"> / 10 </span>
-            </header>
+        <div class="title__user-review">
             <form>
-                <textarea></textarea>
-                <button type="submit">
-                    Post
+                <header class="title__user-review__header">
+                    <h3>NickFame</h3>
+                    <span class="title__user-review__header__rating">
+                        <img src="icons/restart.png" onclick="renewRating()">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                    </span>
+                </header>
+                <div class="title__user-review__comment">
+                    <textarea placeholder="Your opinion.."></textarea>
+                </div>
+                <button>
+                    <img src="icons/send.png">
                 </button>
             </form>
         </div>
-        <header class="title__comments__other-comments"><h2>Other comments</h2></header>          
-        <div class="title__comments">        
+
+        <script src="rating.js">
+        </script>
+        <header class="title__comments__other-comments">
+            <h2>Other comments</h2>
+        </header>
+        <div class="title__comments">
             <div class="title__comments__comment">
-                    <header>
-                        username
-                        <span>9 / 10</span>
-                    </header>
-                    <p>John Wick is a heartwarming tale about a retired assassin who learns the true value of life,
-                        love, and a well-stocked arsenal. It's essentially a touching dog-lover's revenge fantasy turned
-                        into an ultra-violent symphony of bullets and perfectly tailored suits. The plot, much like
-                        Wick's enemies, is shot full of holes, but hey, who needs story when Keanu Reeves is reloading
-                        in slow motion? It's like a yoga class for gun enthusiasts: calm, methodical, and surprisingly
-                        therapeutic to watch.</p>
-            </div>
-            <div class="title__comments__comment">
-                <header>
-                    MovieFan22
-                    <span>8 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>username</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>John Wick is an adrenaline-pumping ride from start to finish. The action scenes are top-notch, and Keanu Reeves delivers an amazing performance. The story is simple but effective, making it a great watch for action fans!</p>
+                <p>John Wick is a heartwarming tale about a retired assassin who learns the true value of life,
+                    love, and a well-stocked arsenal. It's essentially a touching dog-lover's revenge fantasy turned
+                    into an ultra-violent symphony of bullets and perfectly tailored suits. The plot, much like
+                    Wick's enemies, is shot full of holes, but hey, who needs story when Keanu Reeves is reloading
+                    in slow motion? It's like a yoga class for gun enthusiasts: calm, methodical, and surprisingly
+                    therapeutic to watch.</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    ActionAddict
-                    <span>10 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>MovieFan22</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>This is hands down one of the best action films ever made. Every fight is choreographed to perfection, and the world-building is fascinating. John Wick is a masterpiece of its genre.</p>
+                <p>John Wick is an adrenaline-pumping ride from start to finish. The action scenes are top-notch, and
+                    Keanu Reeves delivers an amazing performance. The story is simple but effective, making it a great
+                    watch for action fans!</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    Cinephile_01
-                    <span>7 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>ActionAddict</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                    </span>
                 </header>
-                <p>The action is spectacular, and the visuals are stylish, but the plot is a bit too thin for my taste. Still, it's an enjoyable movie for what it is.</p>
+                <p>This is hands down one of the best action films ever made. Every fight is choreographed to
+                    perfection, and the world-building is fascinating. John Wick is a masterpiece of its genre.</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    Bulletproof23
-                    <span>9 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>Cinephile_01</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>John Wick is pure action magic. The attention to detail in the fight sequences is incredible, and the film never slows down. Definitely worth watching!</p>
+                <p>The action is spectacular, and the visuals are stylish, but the plot is a bit too thin for my taste.
+                    Still, it's an enjoyable movie for what it is.</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    DogLoverForever
-                    <span>10 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>Bulletproof23</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>Any movie that starts with avenging a dog gets a 10 from me. The emotional weight of the story combined with breathtaking action scenes makes it unforgettable.</p>
+                <p>John Wick is pure action magic. The attention to detail in the fight sequences is incredible, and the
+                    film never slows down. Definitely worth watching!</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    JustAnOpinion
-                    <span>6 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>DogLoverForever</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                    </span>
                 </header>
-                <p>The action is undeniably impressive, but the lack of character depth and a more engaging storyline keeps it from being a favorite of mine. Still, it’s good fun if you’re into stylish violence.</p>
+                <p>Any movie that starts with avenging a dog gets a 10 from me. The emotional weight of the story
+                    combined with breathtaking action scenes makes it unforgettable.</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    CasualViewer
-                    <span>8 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>JustAnOpinion</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>I didn't expect to like this movie as much as I did. It's simple, straightforward, and unapologetically action-packed. Keanu Reeves makes it all so believable!</p>
+                <p>The action is undeniably impressive, but the lack of character depth and a more engaging storyline
+                    keeps it from being a favorite of mine. Still, it’s good fun if you’re into stylish violence.</p>
             </div>
             <div class="title__comments__comment">
-                <header>
-                    AssassinFan98
-                    <span>9 / 10</span>
+                <header class="title__comments__comment__header">
+                    <h3>CasualViewer</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                    </span>
                 </header>
-                <p>The combination of revenge, honor, and an underground assassin network is captivating. John Wick stands out as a modern action classic with tons of rewatch value.</p>
+                <p>I didn't expect to like this movie as much as I did. It's simple, straightforward, and
+                    unapologetically action-packed. Keanu Reeves makes it all so believable!</p>
             </div>
-            
+            <div class="title__comments__comment">
+                <header class="title__comments__comment__header">
+                    <h3>AssassinFan98</h3>
+                    <span class="title__comments__comment__header__rating">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star-filled.png">
+                        <img src="icons/star.png">
+                    </span>
+                </header>
+                <p>The combination of revenge, honor, and an underground assassin network is captivating. John Wick
+                    stands out as a modern action classic with tons of rewatch value.</p>
+            </div>
+
+
         </div>
     </main>
 </body>

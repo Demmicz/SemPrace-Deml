@@ -536,7 +536,7 @@ footer {
     display: grid;
     grid-template-columns: 1fr;
     border: 1px solid black;
-    width: 500px;
+    width: 300px;
     height: fit-content;
     border-radius: 20px;
     background-color: var(--color-element-B);
@@ -544,18 +544,21 @@ footer {
 
 .title__user-review__header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    
+    margin-bottom: 10px;
 }
 
 .title__user-review__header h3 {
     color: var(--color-element-A);
     margin-left: 25px;
+    align-self: left;
 }
 
 .title__user-review__header__rating {
     margin-right: 10px;
     cursor: pointer;
+    align-self: center;
 }
 .title__user-review__header__rating img[src = "icons/restart.png"]{
     filter: invert(1);
@@ -569,11 +572,13 @@ footer {
     height: 100px;
 }
 .title__user-review__comment textarea {
-    width: 450px;
+    width: 250px;
     height: 90%;
     display: block;
     resize: none;
     margin: auto;
+    color: white;
+    background-color: #565a64;
 }
 .title__user-review button {
     display: block;
@@ -610,15 +615,25 @@ footer {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
+    background-color: var(--color-element-B);
 }
-.title__comments__comment header {
+.title__comments__comment__header {
     grid-area: "header";
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin: 5px;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.title__comments__comment__header__rating img{
+    width: 20px;
+}
+.title__comments__comment__header h3 {
+    color: var(--color-element-A);
+    margin-left: 5px;
 }
 .title__comments__comment p {
+    color: white;
     grid-area: "review";
     margin: 5px;
     text-align: justify;
@@ -950,9 +965,6 @@ footer {
     .title__description img {
         width: 30%;
     }
-    .title__user-comment {
-        width: 50%;
-    }
 }
 @media screen and (min-width: 750px) {
 
@@ -1019,12 +1031,22 @@ footer {
     .title__description__btns button{
         align-content: center;
     }
-    .title__user-comment{
-        grid-column: 1 / 2;
-        grid-row: 3 / 4;
-        width: 33%;
-        aspect-ratio: 3 / 2 ;
-
+    .title__user-review{
+        width: 500px;
+    }
+    .title__user-review__header{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .title__user-review__header h3{
+        margin-left: 25px;
+    }
+    .title__user-review__header__rating{
+        margin-right: 25px;
+    }
+    .title__user-review textarea{
+        width: 450px;
     }
     .title__comments__comment{
         width: 90%;
