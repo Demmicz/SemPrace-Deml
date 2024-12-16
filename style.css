@@ -61,6 +61,12 @@ body {
     padding-bottom: auto;
     font-size: 1rem;
 }
+#logo a img {
+    height: 1rem;
+}
+#logo a:hover img {
+    content: url("icons/FreeTimeZone-hover.png");
+}
 #login{
     color: white;
     text-decoration: none;
@@ -97,7 +103,7 @@ body {
     background-color: white;
 }
 .nav-primary__form_login form button:hover{
-    background-color: silver;
+    background-color: var(--color-element-A);
     cursor: pointer;
     outline: 3px solid black;
 }
@@ -144,7 +150,6 @@ footer {
     align-items: center;
 }
 .login {
-
     height: 350px;
     width: 250px;
     color: white;
@@ -166,7 +171,7 @@ footer {
     filter: none;
     transform: scale(1.01);
 }
-.login a img {
+.login__back img {
     height: 32px;
     filter: invert(1);
 }
@@ -217,7 +222,8 @@ footer {
 }
 
 .registration{
-    height: 450px;
+    min-height: 450px;
+    max-height: 700px;
     width: 250px;
     color: white;
     background-color: var(--color-element-B); 
@@ -226,7 +232,22 @@ footer {
     padding: 25px;
     outline: 5px solid white;
 }
-
+.registration__back {
+    float: right;
+    height: 32px;
+    border-radius: 5px;
+}
+.registration__back:hover {
+    background-color: var(--color-element-B);
+}
+.registration__back:hover > img {
+    filter: none;
+    transform: scale(1.01);
+}
+.registration__back img {
+    height: 32px;
+    filter: invert(1);
+}
 .registration form {
     display: grid;
     grid-template-columns: 1fr;
@@ -265,11 +286,12 @@ footer {
 
 /* movies.html, tvshows.html and videogames.html */
 #btn--filter{
+    position: sticky;
     background-color: white;
-    width: 100%;
     text-align: center;
     cursor: pointer;
     border: white 1px solid;
+    border-radius: 5px;
 
 }
 #btn--filter img {
@@ -300,6 +322,36 @@ footer {
 .filters__form__year, .filters__form__rating{
     border-top: 1px solid white;
     margin-bottom: 10px;
+}
+.filters__form__rating {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-row-gap: 5px;
+    justify-items: right;
+}
+.filters__form__rating input{
+    color: var(--color-element-A);
+    background-color: var(--color-element-B);
+    margin-left: 20px;
+    border-radius: 5px;
+}
+.filters__form__rating h3{
+    justify-self: left;
+}
+.filters__form__year {
+    display: grid;
+    grid-template-columns: 150px;
+    grid-row-gap: 5px;
+    justify-items: right;
+}
+.filters__form__year input{
+    color: var(--color-element-A);
+    background-color: var(--color-element-B);
+    margin-left: 20px;
+    border-radius: 5px;
+}
+.filters__form__year h3{
+    justify-self: left;
 }
 .filters__form__platforms, .filters__form__genre{
     border-top: 1px solid white;
@@ -338,7 +390,8 @@ footer {
     background-color: var(--color-element-B);
     display: grid;
     grid-template-columns: 1fr;
-    width: 300px;
+    max-width: 300px;
+    min-width: 250px;
     position: relative;
     margin: 15px;
     padding-top: 15px;
@@ -726,27 +779,47 @@ footer {
 .news__aside{
     display: none;
     height: fit-content;
-    background-color: var(--color-element-A);
+    background-color: var(--color-element-B);
     color: white;
     padding: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+.news__aside__sort h2{
+    color: var(--color-element-A);
+}
 .news__aside__sort{
     margin-bottom: 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 5px;
 }
-.news__aside__sort::first-line{
-    font-size: 20px;
-    font-weight: 600;
+.news__aside__newsletter {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
 }
-.news__aside__newsletter > label{
-    margin-right: 10px;
+.news__aside__newsletter > span > span {
+    font-size: 600;
+    color: var(--color-element-A);
+}
+.news__aside__newsletter input{
+    width: 40%;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
 .news__aside__newsletter button {
     cursor: pointer;
-    padding: 3px 7px;
-    background-color: #283e6b;
+    padding: 10px;
+    background-color: var(--color-element-A);
     color: white;
+    border-radius: 10px;
+    justify-self: left;
 }
+.news__aside__newsletter button:hover{
+    transform: scale(1.05);
+}
+.new
 /* article.html */
 .article__author {
     height: 100px;
@@ -760,7 +833,7 @@ footer {
 .main--article article {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     color: white;
-    background-color: var(--color-element-A);
+    background-color: var(--color-element-B);
     padding: 10px;
 }
 .main--article article section {
@@ -770,75 +843,62 @@ footer {
 }
 .main--article article header {
     margin-left: 10px;
+    color: var(--color-element-A);
 }
 .article__release-date {
     font-style: italic;
     margin: 10px;
 }
-.article__user-comment{
-    color: white;
-    width: calc(90% - 20px);
-    aspect-ratio: 2;
-    margin: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.article__user-comment {
+    justify-self: center;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30px 1fr;
-    grid-template-areas: "header"
-                         "form";
-    background-color: var(--color-element-A);
-    border: #03122F 1px solid;
-    padding: 10px;
-    border-radius: 10px;
+    border: 1px solid black;
+    width: 80%;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: var(--color-element-B);
+    margin-top: 10px;
 }
 
-.article__user-comment > header {
-    color: white;
-    grid-area: "header";
-    margin: 5px;
-}
-.article__user-comment > form {
-    grid-area: "form" ;
-    justify-content: end;
+.article__user-comment__header {
+    
+    margin-bottom: 10px;
 }
 
-.article__user-comment textarea {
+.article__user-comment__header h3 {
+    color: var(--color-element-A);
+    margin-left: 25px;
+    align-self: left;
+}
+
+.article__user-comment__opinion{
+    height: 100px;
+}
+.article__user-comment__opinion textarea {
     width: 90%;
-    aspect-ratio: 5 / 3;
-    margin: 10px;
-    padding: 3px;
+    height: 90%;
+    display: block;
     resize: none;
-    border: none;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 2px;
-    text-overflow: ellipsis;
-    text-align: justify;
-    background-color: var(--color-element-A);
+    margin: auto;
+    color: white;
+    background-color: #565a64;
 }
 .article__user-comment button {
     display: block;
-    margin: 5px;
-    padding: 7px 10px;
-    justify-self: end;
-    color: white;
-    background-color:#082869;
-    border: none;
-    border-radius: 8px;
+    background-color: var(--color-element-A);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    justify-self: right;
+    margin: 20px 25px;
     cursor: pointer;
 }
-.article__user-comment button:hover {
-    background-color:#051a44 ;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: background 0.1s ease;
+.article__user-comment button > img {
+    width: 30px;
 }
-.article__user-comment__rating {
-    font-size: 16px;
-    width:35px;
-    border: none;
-    border-radius: 1px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    
+.article__user-comment button:hover {
+    transform: scale(1.05);
 }
 .article__comments__other-comments h2{
     color:white;
@@ -865,7 +925,7 @@ footer {
     padding: 10px;
     margin: 10px;
     border-radius: 10px;
-    background-color: var(--color-element-A);
+    background-color: var(--color-element-B);
     color: white;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
@@ -875,6 +935,9 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: 5px;
+}
+.article__comments__comment header h3 {
+    color: var(--color-element-A);
 }
 .article__comments__comment p {
     grid-area: "review";
@@ -1064,10 +1127,12 @@ footer {
         position: sticky;
         top: 0;
         left: 0;
-        padding: 40px;
+        padding-left: 40px;
+        padding-top: 20px;
+        padding-right: 40px;
         display: block;
         float: left;
-        width: 20%;
+        width: 24%;
         height: 100vh;
     }
 }
