@@ -126,16 +126,30 @@
             }
         </script>
 
-        <div class="title__user-comment">
-            <header>
-                username
-                <span><input type="number" min="1" max="10" class="title__user-comment__rating"> / 10 </span>
-            </header>
-            <form>
-                <textarea></textarea>
-                <button type="submit">Post</button>
-            </form>
+<div class="title__user-review">
+    <form>
+        <header class="title__user-review__header">
+            <h3>NickFame</h3>
+            <span class="title__user-review__header__rating">
+                <img src="icons/restart.png" onclick="renewRating()">
+                <img src="icons/star.png">
+                <img src="icons/star.png">
+                <img src="icons/star.png">
+                <img src="icons/star.png">
+                <img src="icons/star.png">
+            </span>
+        </header>
+        <div class="title__user-review__comment">
+            <textarea placeholder="Your opinion.."></textarea>
         </div>
+        <button>
+            <img src="icons/send.png">
+        </button>
+    </form>
+</div>
+</body>
+<script src="rating.js">
+</script>
 
         <header class="title__comments__other-comments"><h2>Other comments</h2></header>
         <div class="title__comments">

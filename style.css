@@ -130,7 +130,7 @@ body {
 
 
 footer {
-    background-color: var(--color-element-A);
+    background-color: var(--color-element-B);
     height: 5vh;
     color: white;
 }
@@ -415,7 +415,7 @@ footer {
     text-decoration: none;
 }
 
-/*Styles for all movies, shows and videogames*/
+/* Styles for all movies, shows and videogames */
 
 
 .title__header{
@@ -463,10 +463,10 @@ footer {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
-    justify-items: center;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    height: 50px;
+    height: fit-content;
 }
 .title__description__btns button {
     background-color: var(--color-element-A);
@@ -496,7 +496,7 @@ footer {
 .title__description__about {
     display: none;
     margin: 10px;
-    padding: 5px;
+    padding: 10px;
     text-align: justify;
 }
 .title__description__platforms{
@@ -531,68 +531,65 @@ footer {
     padding-bottom: 10px;
 
 }
-.title__user-comment{
-    width: calc(90% - 20px);
-    margin: auto;
-    margin-bottom: 20px;
+.title__user-review {
+    justify-self: center;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 30px 1fr;
-    grid-template-areas: "header"
-                         "form";
-    background-color: white;
-    border: #03122F 1px solid;
-    padding: 10px;
-    border-radius: 10px;
+    border: 1px solid black;
+    width: 500px;
+    height: fit-content;
+    border-radius: 20px;
+    background-color: var(--color-element-B);
 }
 
-.title__user-comment > header {
-    grid-area: "header";
+.title__user-review__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 5px;
-}
-.title__user-comment > form {
-    grid-area: "form" ;
-    justify-content: end;
 }
 
-.title__user-comment textarea {
-    width: 90%;
-    aspect-ratio: 5 / 3;
-    margin: 10px;
-    padding: 3px;
-    resize: none;
-    border: none;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    border-radius: 2px;
-    text-overflow: ellipsis;
-    text-align: justify;
+.title__user-review__header h3 {
+    color: var(--color-element-A);
+    margin-left: 25px;
 }
-.title__user-comment button {
-    display: block;
-    margin: 5px;
-    padding: 7px 10px;
-    justify-self: end;
-    color: white;
-    background-color:#082869;
-    border: none;
-    border-radius: 8px;
+
+.title__user-review__header__rating {
+    margin-right: 10px;
     cursor: pointer;
 }
-.title__user-comment button:hover {
-    background-color:#051a44 ;
-    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    transition: background 0.1s ease;
+.title__user-review__header__rating img[src = "icons/restart.png"]{
+    filter: invert(1);
+    cursor: pointer;
+    display: none;
 }
-.title__user-comment__rating {
-    font-size: 16px;
-    width:35px;
-    border: none;
-    border-radius: 1px;
-    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-    
+.title__user-review__header__rating img[src = "icons/restart.png"]:hover {
+    transform: scale(1.05);
+}
+.title__user-review__comment{
+    height: 100px;
+}
+.title__user-review__comment textarea {
+    width: 450px;
+    height: 90%;
+    display: block;
+    resize: none;
+    margin: auto;
+}
+.title__user-review button {
+    display: block;
+    background-color: var(--color-element-A);
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    justify-self: right;
+    margin: 20px 25px;
+    cursor: pointer;
+}
+.title__user-review button > img {
+    width: 30px;
+}
+.title__user-review button:hover {
+    transform: scale(1.05);
 }
 .title__comments {
     display: flex;
@@ -900,6 +897,14 @@ footer {
     }
     .registration {
         width: 350px;
+    }
+
+    /*styles for all movies, shows and videogames*/
+
+    .title__description__btns {
+        flex-direction: row;
+        justify-content: flex-start;
+        height: 50px;
     }
 }
 @media screen and (min-width: 586px) {

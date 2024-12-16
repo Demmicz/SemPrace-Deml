@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :ROOT {
+            --color-background-A: #19305C;
+            --color-element-A: #F3A712;
+            --color-element-B: #2E3138;
+            --font: "Roboto";
+            --font-M: "Roboto-medium";
+            --font-B: "Roboto-black";
+            --font-I: "Roboto-italic";
+            --font-background-articles: #03122F;
+            --background--rating: #b50a26;
+        }
+
+        body {
+            font-family: var(--font);
+        }
+
+        .title__user-review {
+            display: grid;
+            grid-template-columns: 1fr;
+            border: 1px solid black;
+            width: 500px;
+            height: fit-content;
+            border-radius: 20px;
+            background-color: var(--color-element-B);
+        }
+
+        .title__user-review__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .title__user-review__header h3 {
+            color: var(--color-element-A);
+            margin-left: 25px;
+        }
+
+        .title__user-review__header__rating {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .title__user-review__header__rating img[src = "icons/restart.png"]{
+            filter: invert(1);
+            cursor: pointer;
+            display: none;
+        }
+        .title__user-review__header__rating img[src = "icons/restart.png"]:hover {
+            transform: scale(1.05);
+        }
+        .title__user-review__comment{
+            height: 100px;
+        }
+        .title__user-review__comment textarea {
+            width: 450px;
+            height: 90%;
+            display: block;
+            resize: none;
+            margin: auto;
+        }
+        .title__user-review button {
+            display: block;
+            background-color: var(--color-element-A);
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 10px;
+            justify-self: right;
+            margin: 20px 25px;
+            cursor: pointer;
+        }
+        .title__user-review button > img {
+            width: 30px;
+        }
+        .title__user-review button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="title__user-review">
+        <form>
+            <header class="title__user-review__header">
+                <h3>NickFame</h3>
+                <span class="title__user-review__header__rating">
+                    <img src="icons/restart.png" onclick="renewRating()">
+                    <img src="icons/star.png">
+                    <img src="icons/star.png">
+                    <img src="icons/star.png">
+                    <img src="icons/star.png">
+                    <img src="icons/star.png">
+                </span>
+            </header>
+            <div class="title__user-review__comment">
+                <textarea placeholder="Your opinion.."></textarea>
+            </div>
+            <button>
+                <img src="icons/send.png">
+            </button>
+        </form>
+    </div>
+</body>
+<script>
+</script>
+
+</html>
