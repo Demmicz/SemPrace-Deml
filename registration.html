@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Registration</title>
 </head>
+
 <body>
     <main class="main--registration">
-    <div class = "registration">
-        <a href = "login.html" class="registration__back"><img src="icons/close.png"></a>
-        <header><h1>Registration</h1></header>
-        <form id = "registration">
-            <label for="first_name">First Name</label><input type = "text" name = "First_name" id = "first_name">
-            <label for="last_name">Last Name</label><input type="text" name = "Last_Name" id="last_name">
-            <label for="email">Email</label><input type="email" name = "email" id="email">
-            <label for="username">Username</label><input type="text" name = "username" id="username">
-            <label for="password">Password</label><input type = "password" name = "password" id="password">
-            <label for="Confirm_password">Confirm password</label><input type = "password" name = "Confirm_password" id="Confirm_password">
-            <button type= "button" onclick = "loginControl()" name = "registration">Register</button>
-        </form>
-    </div>
-</main>
-<script src="login.js"></script>
+        <div class="registration">
+            <a href="login.html" class="registration__back"><img src="icons/close.png"></a>
+            <header>
+                <h1>Registration</h1>
+            </header>
+            <form id="registration">
+                <label for="first_name">First Name</label><input type="text" name="First_name" id="first_name">
+                <span id="error"></span>
+                <label for="last_name">Last Name</label><input type="text" name="Last_Name" id="last_name">
+                <span id="error"></span>
+                <label for="email">Email</label><input type="email" name="email" id="email">
+                <span id="error"></span>
+                <label for="username">Username</label><input type="text" name="username" id="username">
+                <span id="error"></span>
+                <label for="password">Password</label><input type="password" name="password" id="password">
+                <span id="error"></span>
+                <label for="Confirm_password">Password again</label><input type="password" name="Confirm_password"
+                    id="Confirm_password">
+                <span id="error"></span>
+                <button type="button" onclick="registrationValuesControl()" name="registration">Register</button>
+            </form>
+        </div>
+    </main>
+    <script src="login.js"></script>
 </body>
+
 </html>

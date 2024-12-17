@@ -84,7 +84,7 @@ document.querySelector(".top-picks--videogames__right").addEventListener("click"
     }
 });
 document.querySelector(".top-picks--videogames__left").addEventListener("click", () => {
-    if (titles_videogames.scrollLeft != 0) {
+    if (titles_videogames.scrollLeft > 0) {
         const image_width = images_videogames[index_videogames - 1].clientWidth + 30;
         titles_videogames.scrollLeft -= image_width;
 

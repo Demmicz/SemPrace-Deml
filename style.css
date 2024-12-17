@@ -159,6 +159,12 @@ footer {
     padding: 25px;
     outline: 5px solid white;
 }
+#error, #error--confirm-pasword, #error--confirm-pasword{
+    color: red;
+    text-align: right;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
 .login__back {
     float: right;
     height: 32px;
@@ -959,7 +965,10 @@ footer {
         grid-template-columns: 40% 60%;
     }
     .registration form {
-        grid-template-columns: 40% 60%;
+        grid-template-columns: 45% 55%;
+    }
+    #error, #error--confirm-pasword, #error--confirm-pasword {
+        grid-column: span 2;
     }
     .login form label {
         align-self: center;
@@ -975,7 +984,11 @@ footer {
     .registration {
         width: 350px;
     }
-
+    .registration form label {
+        align-self: center;
+        justify-self: right;
+        margin-right: 10px;
+    }
     /*styles for all movies, shows and videogames*/
 
     .title__description__btns {

@@ -14,9 +14,12 @@
             <a href = "index.html" class="login__back"><img src="icons/close.png"></a>
             <header><h1>Login</h1></header>
             <form>
-                <label for="username">Username</label> <input type="text" name="username" id="username"  required>
-                <label for="password">password</label> <input type="password" name="password" id="password" required>
-                <button type="button" onclick="loginControl()" name="login">Login</button>
+                
+                <label for="username">Username</label> <input type="text" name="username" id="username" class="" required>
+                <span id = "error"></span>
+                <label for="password">password</label> <input type="password" name="password" id="password" class="" required>
+                <span id = "error"></span>
+                <button type="button" onclick="loginValuesControl()" name="login">Login</button>
             </form>
             Haven´t an acount? <a href="registration.html">Sign in</a><br>
         </div>
